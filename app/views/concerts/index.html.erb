@@ -1,0 +1,26 @@
+<div class='page-header'>
+  <h1>Todays Shows</h1>
+</div>
+
+<table class='table table-striped table-hover'>
+  <thead>
+    <tr>
+      <th>Show</th>
+      <th>description</th>
+      <th>ticket_info</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @concerts.each do |concert|%>
+    <tr>
+      <td><%= link_to concert.title, concert_shared_experiences_path(concert_id: concert.id) %></td>
+      <td><%= concert.description %></td>
+      <td><%= concert.ticket_info %></td>
+
+    </tr>
+    <% end %>
+  </tbody>
+
+  
+</table>

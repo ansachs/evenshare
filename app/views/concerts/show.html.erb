@@ -1,0 +1,27 @@
+<div class='page-header'>
+  <h1><%= @location.country %></h1>
+</div>
+
+<div class='row'>
+  <div class='col-lg-12'>
+    <h4>Description</h4>
+    <p>Chicago Coffee Roasters <%= @location.city %> location</p>
+
+    <h4>Address</h4>
+    <p><%= @location.address %></p>
+    <p><%= @location.manager %></p>
+    <p><%= @location.phone %></p>
+    <p>latitude: <%= @location.latitude %></p>
+    <p>longitude: <%= @location.longitude %></p>
+  </div>
+  <div class='col-lg-6'>
+  <%= render 'google_map'%>
+  </div>
+
+</div>
+  
+<div class='well'>
+  <%= link_to 'Edit', edit_location_path, class: 'btn btn-primary' %> |
+  <%= link_to 'Back', locations_path %> |
+  <%= link_to 'Show available coffee roasts', location_location_roasts_path(location_id: @location.id) %>
+</div>
