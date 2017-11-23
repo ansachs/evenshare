@@ -14,7 +14,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree ./channels
-//= require jquery
+//= require node_modules/jquery/jquery
 
 //= require room
 // require_tree .
