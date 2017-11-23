@@ -3,11 +3,11 @@ Rails.application.configure do
 
   PRODUCTION_ADDRESS = 'gentle-temple-70367'
 
-  config.web_socket_server_url = "wss://${PRODUCTION_ADDRESS}.herokuapp.com/cable" 
+  config.web_socket_server_url = "wss://#{PRODUCTION_ADDRESS}.herokuapp.com/cable" 
 
   # config/environments/production.rb
 
-config.action_cable.allowed_request_origins = ["https://${PRODUCTION_ADDRESS}.herokuapp.com", "http://${PRODUCTION_ADDRESS}.herokuapp.com"]
+config.action_cable.allowed_request_origins = ["https://#{PRODUCTION_ADDRESS}.herokuapp.com", "http://#{PRODUCTION_ADDRESS}.herokuapp.com"]
 
   # Code is not reloaded between requests.
   config.cache_classes = true
