@@ -1,5 +1,18 @@
-<h1><%=  %></h1>
+<h1>Chat room</h1>
 
-<div id="messages">
-  <%= render @messages.statement %>
+<div class="row col-md-8 col-md-offset-2">
+  <h1><%= @concert.title %></h1>
+
+<div class="panel panel-default">
+  <% if @chats.any? %>
+    <div class="panel-body" id="messages">
+      <%= render partial: 'chats/chat', collection: @chats %>
+    </div>
+  <%else%>
+    <div class="panel-body hidden" id="messages">
+    </div>
+  <%end%>
+</div>
+
+  <%= render partial: 'chats/chat_form', locals: {message: @message, concert: @concert}%>
 </div>

@@ -34,6 +34,7 @@ gem 'money-rails'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'rspec-rails'
+# gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -47,7 +48,8 @@ group :development, :test do
   # gem 'webmock'
   gem 'vcr'
   gem 'rspec'
-  gem 'redis'
+  gem 'redis', '~> 3.3'
+  gem 'pry'
 end
 
 group :development do

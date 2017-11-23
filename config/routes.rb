@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :concerts do
     resources :shared_experiences
   end
-  
+
   resources :artists
   resources :venues
+
+  mount ActionCable.server => '/cable'
 end

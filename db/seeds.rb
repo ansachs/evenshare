@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(email: 'jon@gmail.com', password: 'codeplatoon')
+Concert.create(title: 'van halen', description: '80s rock', ticket_info: 'free', api_id: 9999)
