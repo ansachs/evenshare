@@ -1,10 +1,13 @@
 class SharedExperiencesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :create]
+  before_action :set_concert
+  # after_create_commit { MessageBroadcastJob.perform_later self }
   # before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    @messages = Chat.includes(:concert_id).find_by(concert_id: params[concert_id])
-    
+    @chats = Chat.where(concert_id: @concert.id)
+    @message = Chat.new
+    # binding.pry
   end
 
   def show
@@ -18,18 +21,23 @@ class SharedExperiencesController < ApplicationController
   def edit
   end
 
-  # def create
-  #   @location = Location.new(location_params)
-
-  #   if @location.save
-  #     send_alert = TwilioMessage.new(@location.address, "", current_user)
-  #     # send_alert.create_address
-  #     redirect_to locations_path, notice: 'Location was successfully created.'
-  #   else
-  #     render :new
-  #   end
-  # end
-
+  def create
+    # binding.pry
+    message = Chat.new(message_params)
+    message.user_id = 1
+    # binding.pry
+    if message.save
+      # do some stuff
+      # binding.pry
+      ActionCable.server.broadcast 'room',
+        message: message.statement,
+        user: message.user_id
+      head :ok
+    else 
+      redirect_to concert_shared_experiences_path
+    end
+  end
+    
   def update
     # binding.pry
   #   if @location.update(location_params)
@@ -46,12 +54,13 @@ class SharedExperiencesController < ApplicationController
 
   private
 
-  def set_location
-    # @location = Location.find(params[:id])
+  def set_concert
+    @concert = Concert.find(params[:concert_id])
   end
 
-  def location_params
-    # params.require(:location).permit(:city, :country, :address, :manager, :phone)
+  def message_params
+    # binding.pry   
+      params['/concerts/1/shared_experiences'].permit(:statement, :concert_id)
   end
 
 end
