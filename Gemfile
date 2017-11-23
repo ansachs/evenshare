@@ -34,6 +34,7 @@ gem 'money-rails'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'rspec-rails'
+gem 'webpacker'
 # gem 'jquery-rails'
 
 # Use Capistrano for deployment
