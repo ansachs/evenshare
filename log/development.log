@@ -6455,3 +6455,178 @@ Completed 200 OK in 34ms (ActiveRecord: 4.9ms)
 
 
 RoomChannel transmitting {"message"=>"hhaa", "user"=>1} (via streamed from room)
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-23 17:10:07 -0600
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.4ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mChat Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "chats" WHERE "chats"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  [1m[36mChat Load (0.3ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered collection of chats/_chat.html.erb [31 times] (1.0ms)
+  Rendered chats/_chat_form.html.erb (15.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 9.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'node_modules/jquery/dist/jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/config
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/images
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/javascripts
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/stylesheets
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/node_modules):
+    4:     <title>Eventshares</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9: 
+   10:     <%= action_cable_meta_tag %>
+  
+app/assets/javascripts/application.js:17
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1878191760746456390_70098605851360'
+Started GET "/" for 127.0.0.1 at 2017-11-23 17:10:19 -0600
+Processing by ConcertsController#index as HTML
+  Rendering concerts/index.html.erb within layouts/application
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT "concerts".* FROM "concerts"[0m
+  Rendered concerts/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'node_modules/jquery/dist/jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/config
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/images
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/javascripts
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/stylesheets
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/node_modules):
+    4:     <title>Eventshares</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9: 
+   10:     <%= action_cable_meta_tag %>
+  
+app/assets/javascripts/application.js:17
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1878191760746456390_70098567720000'
+Started GET "/" for 127.0.0.1 at 2017-11-23 17:11:15 -0600
+Processing by ConcertsController#index as HTML
+  Rendering concerts/index.html.erb within layouts/application
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT "concerts".* FROM "concerts"[0m
+  Rendered concerts/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+Completed 200 OK in 134ms (Views: 132.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-23 17:11:15 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-23 17:11:15 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-23 17:11:25 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mChat Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "chats" WHERE "chats"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  [1m[36mChat Load (0.3ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered collection of chats/_chat.html.erb [31 times] (0.9ms)
+  Rendered chats/_chat_form.html.erb (3.2ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-23 17:20:43 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mChat Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "chats" WHERE "chats"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  [1m[36mChat Load (0.3ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered collection of chats/_chat.html.erb [31 times] (0.8ms)
+  Rendered chats/_chat_form.html.erb (2.2ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (couldn't find file '../node_modules/jquery/dist/jquery' under '/Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/javascripts' with type 'application/javascript'
+Checked in these paths: 
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/config
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/images
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/javascripts
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/stylesheets
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:     <%= action_cable_meta_tag %>
+    11: 
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1878191760746456390_70098592572880'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-23 17:20:43 -0600
+RoomChannel stopped streaming from room
+Started GET "/" for 127.0.0.1 at 2017-11-23 17:20:50 -0600
+Processing by ConcertsController#index as HTML
+  Rendering concerts/index.html.erb within layouts/application
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT "concerts".* FROM "concerts"[0m
+  Rendered concerts/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file '../node_modules/jquery/dist/jquery' under '/Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/javascripts' with type 'application/javascript'
+Checked in these paths: 
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/config
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/images
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/javascripts
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/app/assets/stylesheets
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /usr/local/var/rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/lobsterhead/Desktop/codeplatoon/eventshares/node_modules):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:     <%= action_cable_meta_tag %>
+    11: 
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1878191760746456390_70098590425420'
+Started GET "/" for 127.0.0.1 at 2017-11-23 17:21:00 -0600
+Processing by ConcertsController#index as HTML
+  Rendering concerts/index.html.erb within layouts/application
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT "concerts".* FROM "concerts"[0m
+  Rendered concerts/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 71ms (Views: 69.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-23 17:21:00 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-23 17:21:00 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
