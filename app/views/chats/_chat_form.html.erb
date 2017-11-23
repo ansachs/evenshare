@@ -1,0 +1,7 @@
+<%= form_for concert_shared_experiences_path, remote: true, authenticity_token: true do |f| %>
+  <%= f.label :say_something %>:
+  <%= f.text_field :statement, class: "form-control", data: {textarea: "message"} %>
+  <%= f.hidden_field :concert_id, value: @concert.id %>
+  <%= f.submit "send", style: 'display:none', class: "target_this", data: {send: "message"} %>
+<% end %>
+<br>
