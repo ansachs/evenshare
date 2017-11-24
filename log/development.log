@@ -6630,3 +6630,39 @@ Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-23 17:21:00 -0600
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 RoomChannel is transmitting the subscription confirmation
 RoomChannel is streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-23 18:05:38 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-23 18:05:38 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/" for 127.0.0.1 at 2017-11-23 18:05:40 -0600
+Processing by ConcertsController#index as HTML
+  Rendering concerts/index.html.erb within layouts/application
+  [1m[36mConcert Load (0.4ms)[0m  [1m[34mSELECT "concerts".* FROM "concerts"[0m
+  Rendered concerts/index.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+Completed 200 OK in 1150ms (Views: 1129.9ms | ActiveRecord: 3.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-23 18:05:41 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-23 18:05:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-23 18:05:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-23 18:05:43 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mChat Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "chats" WHERE "chats"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  [1m[36mChat Load (0.2ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered collection of chats/_chat.html.erb [31 times] (0.7ms)
+  Rendered chats/_chat_form.html.erb (12.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (18.9ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 68ms (Views: 37.8ms | ActiveRecord: 5.7ms)
+
+
