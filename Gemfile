@@ -36,6 +36,7 @@ gem 'faraday_middleware'
 gem 'rspec-rails'
 gem 'webpacker'
 gem 'vcr'
+gem 'redis', '~> 3.3'
 # gem 'jquery-rails'
 
 # Use Capistrano for deployment
@@ -51,7 +52,7 @@ group :development, :test do
   # gem 'webmock'
   
   gem 'rspec'
-  gem 'redis', '~> 3.3'
+  
   gem 'pry'
 end
 
