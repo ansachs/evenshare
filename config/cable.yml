@@ -7,13 +7,11 @@ test:
   url: redis://localhost:6379/1
 
 production:
-  # adapter: redis
+  adapter: redis
   # url: redis://h:p5020666ca7091edf1be00140c185cd5941cd0c03d57140cc1e379bcc9a898d8f@ec2-34-227-234-245.compute-1.amazonaws.com:29769  
   # channel_prefix: eventshares_production
-  :url: 
-  redis://h:p5020666ca7091edf1be00140c185cd5941cd0c03d57140cc1e379bcc9a898d8f@ec2-34-227-234-245.compute-1.amazonaws.com:29769
-  :host: ec2-34-227-234-245.compute-1.amazonaws.com
-  :port: 29769
-  :password: p5020666ca7091edf1be00140c185cd5941cd0c03d57140cc1e379bcc9a898d8f
-  :inline: true
-  :timeout: 1
+  url: redis://h:p5020666ca7091edf1be00140c185cd5941cd0c03d57140cc1e379bcc9a898d8f@ec2-34-227-234-245.compute-1.amazonaws.com:29769
+  host: ec2-34-227-234-245.compute-1.amazonaws.com
+  port: 29769
+  password: p5020666ca7091edf1be00140c185cd5941cd0c03d57140cc1e379bcc9a898d8f
+  
