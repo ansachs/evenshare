@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  PRODUCTION_ADDRESS = 'gentle-temple-70367'
+  PRODUCTION_ADDRESS = 'gigshare'
 
   config.web_socket_server_url = "wss://#{PRODUCTION_ADDRESS}.herokuapp.com/cable" 
 
