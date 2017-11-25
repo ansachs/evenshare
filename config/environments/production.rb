@@ -93,10 +93,10 @@ Rails.application.configure do
 
   PRODUCTION_ADDRESS = 'gigshare'
 
-  config.web_socket_server_url = "wss://#{PRODUCTION_ADDRESS}.herokuapp.com/" 
-  config.action_cable.url = "wss://#{PRODUCTION_ADDRESS}.herokuapp.com/cable"
+  config.web_socket_server_url = "wss://http://www.#{PRODUCTION_ADDRESS}.herokuapp.com/" 
+  config.action_cable.url = "wss://http://www.#{PRODUCTION_ADDRESS}.herokuapp.com/cable"
 
-  config.action_cable.allowed_request_origins = ["https://#{PRODUCTION_ADDRESS}.herokuapp.com", "http://#{PRODUCTION_ADDRESS}.herokuapp.com"]
+  config.action_cable.allowed_request_origins = ["https://www.#{PRODUCTION_ADDRESS}.herokuapp.com", "http://www.#{PRODUCTION_ADDRESS}.herokuapp.com"]
 
   config.middleware.use ChatActionCable  
 end
