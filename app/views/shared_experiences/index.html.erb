@@ -4,9 +4,9 @@
   <h1><%= @concert.title %></h1>
 
 <div class="panel panel-default">
-  <% if @chats.any? %>
+  <% if @messages.any? %>
     <div class="panel-body" id="messages">
-      <%= render partial: 'chats/chat', collection: @chats %>
+      <%= render partial: 'chats/chat', collection: @messages, as: :message %>
     </div>
   <%else%>
     <div class="panel-body hidden" id="messages">
