@@ -8,7 +8,7 @@ Rails.application.configure do
 
   # config/environments/production.rb
 
-config.action_cable.allowed_request_origins = ["https://#{PRODUCTION_ADDRESS}.herokuapp.com", "http://#{PRODUCTION_ADDRESS}.herokuapp.com"]
+  config.action_cable.allowed_request_origins = ["https://#{PRODUCTION_ADDRESS}.herokuapp.com", "http://#{PRODUCTION_ADDRESS}.herokuapp.com"]
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -97,4 +97,13 @@ config.action_cable.allowed_request_origins = ["https://#{PRODUCTION_ADDRESS}.he
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  PRODUCTION_ADDRESS = 'gigshare'
+
+  config.web_socket_server_url = "wss://#{PRODUCTION_ADDRESS}.herokuapp.com/cable" 
+  config.action_cable.url = "wss://#{PRODUCTION_ADDRESS}.herokuapp.com/cable"
+
+  config.action_cable.allowed_request_origins = ["https://#{PRODUCTION_ADDRESS}.herokuapp.com", "http://#{PRODUCTION_ADDRESS}.herokuapp.com"]
+
+  config.middleware.use ChatActionCable  
 end
