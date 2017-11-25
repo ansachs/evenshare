@@ -37,6 +37,7 @@ gem 'rspec-rails'
 gem 'webpacker'
 gem 'vcr'
 gem 'redis', '~> 3.3'
+# gem 'warden'
 # gem 'jquery-rails'
 
 # Use Capistrano for deployment

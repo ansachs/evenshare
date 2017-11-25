@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :chats
-  has_many :concerts, through: :chats
+  has_many :messages
+  has_many :chat_boxes, through: :message
 end

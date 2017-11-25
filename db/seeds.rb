@@ -8,3 +8,4 @@
 
 User.create(email: 'jon@gmail.com', password: 'codeplatoon')
 Concert.create(title: 'van halen', description: '80s rock', ticket_info: 'free', api_id: 9999)
+Concert.create(title: 'monty crew', description: 'more bad 80s bands', ticket_info: 'free', api_id: 9999)
