@@ -4,6 +4,7 @@ Rails.application.configure do
   PRODUCTION_ADDRESS = 'gigshare'
 
   config.web_socket_server_url = "wss://#{PRODUCTION_ADDRESS}.herokuapp.com/cable" 
+  config.action_cable.url = "wss://#{PRODUCTION_ADDRESS}.herokuapp.com/cable"
 
   # config/environments/production.rb
 
