@@ -76,7 +76,7 @@ class SharedExperiencesController < ApplicationController
 
   def render_message(message) 
       ApplicationController.renderer.render(partial: 'chats/chat', locals: { message: message }) 
-      binding.pry
+      binding.remote_pry
   end
 
 end
