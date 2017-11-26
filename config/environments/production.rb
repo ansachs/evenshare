@@ -98,5 +98,5 @@ Rails.application.configure do
 
   config.action_cable.allowed_request_origins = ["https://www.#{PRODUCTION_ADDRESS}.herokuapp.com", "http://www.#{PRODUCTION_ADDRESS}.herokuapp.com"]
 
-  config.middleware.use ChatActionCable  
+  # config.middleware.use ChatActionCable  
 end

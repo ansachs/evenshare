@@ -37,6 +37,7 @@ gem 'rspec-rails'
 gem 'webpacker'
 gem 'vcr'
 gem 'redis', '~> 3.3'
+gem 'pry-remote'
 # gem 'warden'
 # gem 'jquery-rails'
 
