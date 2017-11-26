@@ -11921,3 +11921,384 @@ Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
 Subscription class not found: "room"
 RoomChannel is transmitting the subscription confirmation
 RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:22:56 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.4ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMessage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (1.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_box_id" = $1[0m  [["chat_box_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of chats/_chat.html.erb [13 times] (33.5ms)
+  Rendered chats/_chat_form.html.erb (18.7ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (69.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 1182ms (Views: 1124.1ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:22:57 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:22:57 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:23:30 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:23:30 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started POST "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:23:35 -0600
+Processing by SharedExperiencesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3+UjUk+2A+kC6naHZ7R2Y2SZUBC7udlYqlsTcH4pduHZVH+h/xOvoMcQEzCWi7CRBAyFo1ySiA1ghYqro2Rw8A==", "message"=>{"statement"=>"oooo", "chat_box_id"=>"1"}, "commit"=>"send", "concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chat_box_id", "statement", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["chat_box_id", 1], ["statement", "oooo"], ["created_at", "2017-11-26 06:23:35.605756"], ["updated_at", "2017-11-26 06:23:35.605756"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (3.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (0.6ms)
+[ActionCable] Broadcasting to room: {:message=>nil}
+Redirected to http://localhost:3000/concerts/1/shared_experiences
+Completed 200 OK in 88901ms (ActiveRecord: 17.1ms)
+
+
+RoomChannel transmitting {"message"=>nil} (via streamed from room)
+Started GET "/concerts/2/shared_experiences" for 127.0.0.1 at 2017-11-26 00:25:27 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"2"}
+  [1m[36mConcert Load (0.5ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO "chat_boxes" ("concert_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["concert_id", 2], ["created_at", "2017-11-26 06:25:27.432659"], ["updated_at", "2017-11-26 06:25:27.432659"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMessage Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 2], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (13.6ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (18.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (16.3ms)
+Completed 200 OK in 1087ms (Views: 980.9ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:25:28 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:25:28 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:25:30 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.4ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMessage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_box_id" = $1[0m  [["chat_box_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of chats/_chat.html.erb [14 times] (13.0ms)
+  Rendered chats/_chat_form.html.erb (1.4ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (24.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 69ms (Views: 61.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:25:30 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:25:30 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started POST "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:25:33 -0600
+Processing by SharedExperiencesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eXZspWfhroAQSNyxYNxWRGBqbDCf5BMX10EHyhG9emN/xzBW10QCydWyuQaR45C2AP+5g3jPQkIdn54RzPB8cg==", "message"=>{"statement"=>"lalal", "chat_box_id"=>"1"}, "commit"=>"send", "concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.2ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chat_box_id", "statement", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["chat_box_id", 1], ["statement", "lalal"], ["created_at", "2017-11-26 06:25:33.873604"], ["updated_at", "2017-11-26 06:25:33.873604"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (2.2ms)
+[ActionCable] Broadcasting to room: {:message=>nil}
+RoomChannel transmitting {"message"=>nil} (via streamed from room)
+RoomChannel transmitting {"message"=>nil} (via streamed from room)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (0.5ms)
+Redirected to http://localhost:3000/concerts/1/shared_experiences
+Completed 200 OK in 57286ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:26:31 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.2ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMessage Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_box_id" = $1[0m  [["chat_box_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of chats/_chat.html.erb [15 times] (24.3ms)
+  Rendered chats/_chat_form.html.erb (1.3ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (38.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 105ms (Views: 56.1ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:26:37 -0600
+Processing by SharedExperiencesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d1wnX39gt7MU7LtCi4eCsZhu71vvXIf+tN5vRXLeo8WIc5tgNZkXIpIokDIqOZg2uc1M/jb47lmC7IEoScTGkA==", "message"=>{"statement"=>"hhhhhh", "chat_box_id"=>"1"}, "commit"=>"send", "concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.2ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chat_box_id", "statement", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["chat_box_id", 1], ["statement", "hhhhhh"], ["created_at", "2017-11-26 06:26:37.710772"], ["updated_at", "2017-11-26 06:26:37.710772"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (2.5ms)
+[ActionCable] Broadcasting to room: {:message=>"<div class=“message”>\n\n  <p><b>jake:</b> hhhhhh<p>\n\n\n</div>\n"}
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:26:39 -0600
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (1.4ms)
+Redirected to http://localhost:3000/concerts/1/shared_experiences
+Completed 200 OK in 64902ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConcert Load (0.5ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatBox Load (1.2ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  Rendering shared_experiences/index.html.erb within layouts/application
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMessage Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_box_id" = $1[0m  [["chat_box_id", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 00:27:42 -0600
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8z)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+RoomChannel is streaming from room
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of chats/_chat.html.erb [16 times] (12.7ms)
+  Rendered chats/_chat_form.html.erb (1.2ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (32.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 127ms (Views: 50.2ms | ActiveRecord: 23.1ms)
+
+
+Started POST "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:27:49 -0600
+Processing by SharedExperiencesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"We1vdoMtgkeuEdaR964SKeTDMMnQIwRc9j7nZ2DQ3gamwtNJydQi1ijV/eFWEAiuxWCTbAmHbfvADAkKW8q7Uw==", "message"=>{"statement"=>"hohoho", "chat_box_id"=>"1"}, "commit"=>"send", "concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chat_box_id", "statement", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["chat_box_id", 1], ["statement", "hohoho"], ["created_at", "2017-11-26 06:27:49.317834"], ["updated_at", "2017-11-26 06:27:49.317834"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (1.2ms)
+[ActionCable] Broadcasting to room: {:chat=>"<div class=“message”>\n\n  <p><b>jake:</b> hohoho<p>\n\n\n</div>\n"}
+RoomChannel transmitting {"chat"=>"<div class=“message”>\n\n  <p><b>jake:</b> hohoho<p>\n\n\n</div>\n"} (via streamed from room)
+RoomChannel transmitting {"chat"=>"<div class=“message”>\n\n  <p><b>jake:</b> hohoho<p>\n\n\n</div>\n"} (via streamed from room)
+Redirected to http://localhost:3000/concerts/1/shared_experiences
+Completed 200 OK in 33937ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:28:23 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.7ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMessage Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."chat_box_id" = $1[0m  [["chat_box_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered collection of chats/_chat.html.erb [17 times] (10.6ms)
+  Rendered chats/_chat_form.html.erb (1.6ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (20.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 54ms (Views: 43.6ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-26 00:28:29 -0600
+Processing by SharedExperiencesController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XTkx5uTxIZLc2bBnGYOotF4UoMp7r4OjRCOZIv6X8oCiFo3ZrgiBA1odmxe4PbIzf7cDb6IL6gRyEXdPxY2X1Q==", "message"=>{"statement"=>"here we go", "chat_box_id"=>"1"}, "commit"=>"send", "concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("user_id", "chat_box_id", "statement", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["chat_box_id", 1], ["statement", "here we go"], ["created_at", "2017-11-26 06:28:29.136948"], ["updated_at", "2017-11-26 06:28:29.136948"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered chats/_chat.html.erb (1.5ms)
+[ActionCable] Broadcasting to room: {:chat=>"<div class=“message”>\n\n  <p><b>jake:</b> here we go<p>\n\n\n</div>\n"}
+RoomChannel transmitting {"chat"=>"<div class=“message”>\n\n  <p><b>jake:</b> here we go<p>\n\n\n</div>\n"} (via streamed from room)
+RoomChannel transmitting {"chat"=>"<div class=“message”>\n\n  <p><b>jake:</b> here we go<p>\n\n\n</div>\n"} (via streamed from room)

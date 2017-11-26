@@ -42,7 +42,8 @@ class SharedExperiencesController < ApplicationController
         #   message: message.statement,
         #   user: current_user.email
         # head :ok
-        ActionCable.server.broadcast "room", message: render_message(message) 
+        ActionCable.server.broadcast "room", chat: render_message(message)
+        
         redirect_to concert_shared_experiences_path
       else 
         redirect_to concert_shared_experiences_path
@@ -76,7 +77,7 @@ class SharedExperiencesController < ApplicationController
 
   def render_message(message) 
       ApplicationController.renderer.render(partial: 'chats/chat', locals: { message: message }) 
-      binding.remote_pry
+      # binding.pry
   end
 
 end
