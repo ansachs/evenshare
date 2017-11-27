@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "concerts#index"
 
+  post '/:concert_id/media', to: 'shared_experiences#add_media'
+
   resources :concerts do
     resources :shared_experiences
   end

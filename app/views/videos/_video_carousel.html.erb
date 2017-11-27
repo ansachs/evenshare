@@ -1,0 +1,16 @@
+
+<div class="jcarousel-wrapper">
+  <div class="jcarousel">
+      <ul>
+          <% media.each do |frame| %>
+            <li><iframe src=<%= frame.link %> frameborder="0" allowfullscreen></iframe></li>
+          <% end %>
+      </ul>
+
+  </div>
+
+  <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+  <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+  <p class="jcarousel-pagination"></p>
+</div>

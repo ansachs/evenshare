@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20171124222116) do
   create_table "media_links", force: :cascade do |t|
     t.bigint "concert_id"
     t.bigint "user_id"
+    t.string "media_type"
+    t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["concert_id"], name: "index_media_links_on_concert_id"

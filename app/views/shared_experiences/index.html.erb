@@ -1,9 +1,16 @@
-<h1>Chat room</h1>
+<h1><%= @concert.title %></h1>
+<div class="row">
+<% # => binding.pry %>
+  <%= render partial: 'videos/video_carousel', locals: {media: @media} %>
+</div>
+<div class="row">
+  <% #binding.pry %>
+  <%= render partial: 'videos/video_submit' %>
+  <% #binding.pry %>
+</div>
+<div class="row col-md-8">
 
-<div class="row col-md-8 col-md-offset-2">
-  <h1><%= @concert.title %></h1>
-
-<div class="panel panel-default">
+<div class="panel panel-default" id="chatbox">
   <% if @messages.any? %>
     <div class="panel-body" id="messages">
       <%= render partial: 'chats/chat', collection: @messages, as: :message %>
