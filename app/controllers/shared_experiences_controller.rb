@@ -24,7 +24,7 @@ class SharedExperiencesController < ApplicationController
     # binding.pry
     if current_user == nil
       redirect_to concert_shared_experiences_path, notice: 'must login in to add media'
-    elsif params['user_media']['link'].match?(/^http:\/\/.*/)
+    elsif params['user_media']['link'].match?\(/^http:\/\/.*/\)
       media = MediaLink.new(media_params)
       # binding.pry
       media.concert_id = @concert.id
