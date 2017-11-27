@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require jquery
 //= require cable
+//= require shared_experiences
+//= require jcarousel/jquery.jcarousel.min.js
 // require_tree .
 
 

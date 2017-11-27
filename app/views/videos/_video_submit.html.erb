@@ -1,0 +1,8 @@
+<div id="media_submit_container">
+  <%= form_for :user_media, url: "/#{@concert.id}/media", remote: true, authenticity_token: true do |f| %>
+    <%= f.label :share_your_media %>:
+    <%= f.text_field :link, class: "form-control"%>
+    <%= f.submit "send", id: "media_submit" %>
+  <% end %>
+</div>
+<br>

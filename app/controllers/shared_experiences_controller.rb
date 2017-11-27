@@ -6,16 +6,44 @@ class SharedExperiencesController < ApplicationController
   # before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    # binding.pry
+        
     # if (@concert.chat_box == nil)
     #   ChatBox.create()
     # end
     @chat_box = ChatBox.find_or_create_by(concert_id: @concert.id)
     @messages = Message.where(chat_box_id: @chat_box.id)
+    # binding.pry 
+    @media = MediaLink.where(concert_id: @concert.id)
+    @new_media = MediaLink.new
     # @message = Message.new
     # binding.pry 
 
   end
+
+  def add_media
+    # binding.pry
+    if current_user == nil
+      redirect_to concert_shared_experiences_path, notice: 'must login in to add media'
+    elsif params['user_media']['link'].match? (/^http:\/\/.*/)
+      media = MediaLink.new(media_params)
+      # binding.pry
+      media.concert_id = @concert.id
+      media.user_id = current_user.id
+      # binding.pry
+      if media.save
+        # binding.pry 
+        redirect_to concert_shared_experiences_path
+      else 
+        # binding.pry 
+        redirect_to concert_shared_experiences_path, notice: 'link did not save'
+      end
+    else
+      redirect_to concert_shared_experiences_path, notice: 'invalid link'
+    end
+    # binding.pry 
+    
+  end
+
   def show
     
   end
@@ -44,9 +72,9 @@ class SharedExperiencesController < ApplicationController
         # head :ok
         ActionCable.server.broadcast "room", chat: render_message(message)
         
-        redirect_to concert_shared_experiences_path
+        # redirect_to concert_shared_experiences_path
       else 
-        redirect_to concert_shared_experiences_path
+        # redirect_to concert_shared_experiences_path
       end
     end
   end
@@ -72,7 +100,11 @@ class SharedExperiencesController < ApplicationController
   end
 
   def message_params  
-      params['message'].permit(:statement, :chat_box_id)
+    params['message'].permit(:statement, :chat_box_id)
+  end
+
+  def media_params
+    params['user_media'].permit(:link)
   end
 
   def render_message(message) 
