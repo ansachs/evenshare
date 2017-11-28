@@ -42,6 +42,8 @@ gem 'redis', '~> 3.3'
 gem 'pry'
 gem 'pry-remote'
 gem 'pry-byebug'
+
+gem 'twitter'
 # gem 'warden'
 # gem 'jquery-rails'
 
