@@ -38,7 +38,10 @@ gem 'rspec-rails'
 gem 'webpacker'
 gem 'vcr'
 gem 'redis', '~> 3.3'
+
+gem 'pry'
 gem 'pry-remote'
+gem 'pry-byebug'
 # gem 'warden'
 # gem 'jquery-rails'
 
@@ -56,7 +59,6 @@ group :development, :test do
   
   gem 'rspec'
   
-  gem 'pry'
 end
 
 group :development do
