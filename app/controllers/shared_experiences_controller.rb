@@ -21,7 +21,7 @@ class SharedExperiencesController < ApplicationController
   end
 
   def add_media
-    # binding.pry
+    binding.pry
     if current_user == nil
       redirect_to concert_shared_experiences_path, notice: 'must login in to add media'
     elsif params['user_media']['link'].match? (/^https:\/\/.*embed.*/)
