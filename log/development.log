@@ -30413,3 +30413,502 @@ Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrad
 Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
 RoomChannel is transmitting the subscription confirmation
 RoomChannel is streaming from room
+Started GET "/" for 127.0.0.1 at 2017-11-28 20:26:09 -0600
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ConcertsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Noname w/ Buddy, The Last Artful, Dodgr"], ["description", "<p><b>ABOUT RED BULL SOUND SELECT:</b></p><p>Red Bull Sound Select is an accelerator for music artists. We support them by collaborating on ambitious projects and ideas; using the strength of our global network together with a collective of artists, creatives and events to accelerate their growth. The network consists of 22 city residencies, 200+ events each year, 250+ artists, 50 partners and a growing list of our own festivals like 30 Days and 3 Days.</p><p>Red Bull Sound Select has released several two-song digital singles from its top hand-picked artists, including:</p><p><br></p><p>Jazz Cartier “Nobody’s Watching” produced by Mike WiLL Made-It</p><p>Montell2099 x 21 Savage’s “Hunnid on the Drop”</p><p>Sampa the Great’s HERoes Act 2 EP featuring Estelle, produced by Rahki</p><p>Xavier Omär’s “Afraid” featuring GoldLink, Hit-Boy and Bizness Boi</p><p>Pell’s “Patience” /“Late At Night” featuring MNEK, produced by London On Da Track</p><p>Tennyson’s “Tuesday / Wednesday / Thursday” featuring BJ the Chicago Kid with Mr. Carmack</p><p>Mick Jenkins' \"Drowning\" featuring BADBADNOTGOOD</p><p>River Tiber's \"Illusions\" featuring Pusha T, produced by River Tiber, KAYTRANADA &amp; Doc McKinney</p><p>Gallant's \"Skipping Stones\" featuring Jhené Aiko</p><p>G Herbo’s “Lord Knows” featuring Joey Bada$$</p><p><br></p>"], ["ticket_info", "$15, 18+"], ["api_id", 8388828], ["created_at", "2017-11-29 02:26:09.715560"], ["updated_at", "2017-11-29 02:26:09.715560"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Angus & Julia Stone: Snow US Tour"], ["description", "Doors @ 630PM. Performance begins at 8PM. This show is for AGES 17 AND OLDER. Valid Photo ID is required for age restricted shows. Forms of valid ID are current and non-expired Driver's License, State ID or Passport. House of Blues Chicago is a standing room only venue, all tickets are General Admission unless otherwise stated. Please contact the House of Blues Box Office 312.923.2000 to inquire about Dinner Package Seating and/or Disability Seating. Those in need of Accessible seating need to first purchase a General Admission ticket, then contact the venue Box Office at 312.923.2000 to reserve accommodations. House of Blues Chicago is Smoke Free. There is no re-entry."], ["ticket_info", "$25"], ["api_id", 8154391], ["created_at", "2017-11-29 02:26:09.722300"], ["updated_at", "2017-11-29 02:26:09.722300"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Joywave, The Aces, Maybird"], ["ticket_info", "$15, 18+"], ["api_id", 8518176], ["created_at", "2017-11-29 02:26:09.724495"], ["updated_at", "2017-11-29 02:26:09.724495"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Smiths & Morrissey Night w/ Benny Hernandez & Niko"], ["description", "TUESDAY – 9pm – 11/21 – THE SMITHS & MORRISSEY NIGHT The Smiths & Morrissey all night w/ Benny Hernandez & Niko / rsvp here"], ["ticket_info", "Free"], ["api_id", 8684162], ["created_at", "2017-11-29 02:26:09.726223"], ["updated_at", "2017-11-29 02:26:09.726223"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Kyle Kinane"], ["description", "<p>Kyle Kinane is an internationally touring comedian who has appeared on \"@Midnight,\" \"The Tonight Show with Jimmy Fallon,\" \"Conan,\" \"Workaholics,\" \"This Is Not Happening,\" \"Not Safe with Nikki Glaser\" and \"Comedy Bang! Bang!\" He invented science. Comedy Central will air his newest One Hour Special \"Kyle Kinane: Loose in Chicago\" in October 2016. \"I Liked His Old Stuff Better\" debuted on Comedy Central in 2015. He has ESP. He is featured as a recurring character on Netflix's \"Love.\" Kyle is playing a series regular on \"Those Who Can't\" on TruTV. He let someone else write most of this bio. He can be heard as the voice of Comedy Central and in various animated programs such as \"Regular Show,\" \"Adventure Time,\" \"Lucas Bros. Moving Co,\" \" Aqua Teen Hunger Force,\" \"Bob's Burgers,\" \"TripTank\" and \"The Life and Times of Tim.\" He can swim backwards. Comedy Central released his first hour special \"Whiskey Icarus\" in 2012 in addition to his own Comedy Central Presents: The Half Hour in 2011. Also, farts.</p>\n\n<p><br></p>"], ["ticket_info", "$25, 17+"], ["api_id", 8106854], ["created_at", "2017-11-29 02:26:09.727657"], ["updated_at", "2017-11-29 02:26:09.727657"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Hide, Spa Moans, GrÜn Wasser, Dj Tim Kinsella"], ["description", "9PM // $5 // 21+\n<br />\n<br />Experimental and electronic dream maker SPA MOANS offers their soothing and atmospheric lo-fi synth pop with celebration, releasing a brand-new tape with us this evening. Her ethereal and naturally positioned percussive compositions act as a metaphysical rub down, a massage of music, giving genuine meaning to the aptly named SPA MOANS. Take a deep breath, plant yourself and release as you filter through the bullshit with mood purveyor supreme, SPA MOANS. \n<br />\n<br />Holy moly, Chicago duo GRÜN WASSER are returning to our stage to lay down the thickness. One of the most exciting new bands to emerge out of the city in the past year, the group explores the noisier leanings of industrial synth pop, unearthing emotions from a place of utter darkness. It's \"expression through the feeling and color of a specific moment,\" as the band so eloquently states. \n<br />\n<br />Local rock hero TIM KINSELLA of JOAN OF ARC and CAP’N JAZZ takes off the guitar and gets behind the decks to start the night off right."], ["ticket_info", "$5"], ["api_id", 8712472], ["created_at", "2017-11-29 02:26:09.729409"], ["updated_at", "2017-11-29 02:26:09.729409"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Liam Gallagher, Warbly Jets"], ["description", "<p><b>Liam Gallagher</b><br />\n</p>"], ["ticket_info", "$39.25, all ages"], ["api_id", 8143764], ["created_at", "2017-11-29 02:26:09.731870"], ["updated_at", "2017-11-29 02:26:09.731870"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Comedy Cocktail"], ["description", "Spice up your Tuesday at Comedy of Chicago's Cocktail Comedy in Foundation Room! Have a drink, grab a bite, and enjoy a night of uncensored, unapologetic comedy. DJ Tone-Knee will get the party started at 6pm, comedy kicks off at 7:30! RSVP for free admission.\n<br />7:30 PM\n<br />Chris Trani\n<br />Dan Frees\n<br />Doc Love\n<br />Joe Killgallon<br /><br />9:30 PM\n<br />Mickey Housley\n<br />Danny Kallas\n<br />Matt Riggs<br /><br />Calvin Evans"], ["ticket_info", ""], ["api_id", 8665769], ["created_at", "2017-11-29 02:26:09.733597"], ["updated_at", "2017-11-29 02:26:09.733597"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Octane Amy"], ["description", "<p>Octane Amy</p><p>Tim Nice</p><p>Klew</p><p>Midway</p>"], ["ticket_info", "21+"], ["api_id", 8753497], ["created_at", "2017-11-29 02:26:09.735606"], ["updated_at", "2017-11-29 02:26:09.735606"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Shannon Lay, VV Lightbody, Half Gringa, Grammaw"], ["description", "<p><b>Shannon Lay</b><br />\n</p> \n<p><b>Half Gringa</b><br />\nIzzy Olive is an anxious young woman who overthinks things constantly. A confrontational storyteller, Half Gringa is a long, hard look in the mirror. She writes songs about multicultural identity, domestic disputes, and hope set to rowdy rural rock music.</p> \n<p><b>Grammaw</b><br />\n</p>"], ["ticket_info", "$10, 17+"], ["api_id", 8644652], ["created_at", "2017-11-29 02:26:09.742836"], ["updated_at", "2017-11-29 02:26:09.742836"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Identity Flip: Religiosity"], ["description", "featuring Chris Churchill, Miriam Sobh, Rebecca Anderson, Don Hall, Sydney Davis Jr. Jr. and Ken Hoffmeyer"], ["ticket_info", "$10"], ["api_id", 8734431], ["created_at", "2017-11-29 02:26:09.744521"], ["updated_at", "2017-11-29 02:26:09.744521"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "DJ Dave Roberts "], ["description", "<p>Every 3rd Tuesday DJ Dave Roberts leads an in depth exploration of the works of favorite artists!&nbsp;</p><p>As the cold weather sets in let a little whiskey warm you while you enjoy he uniquely haunting voices of Tom Waits, Leonard Cohen and Nick Cave!&nbsp;</p><p>$3 Draft Beer&nbsp;</p><p>$4 Tom Waits Special</p>"], ["ticket_info", "Free, 21+"], ["api_id", 8654583], ["created_at", "2017-11-29 02:26:09.746119"], ["updated_at", "2017-11-29 02:26:09.746119"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Chicago Night Live"], ["description", "<p>18 AND OLDER</p>\r\n\r\n<p>GA Advance - $20 / GA Day of $30 (<em>Limited Seating)</em></p>\r\n\r\n<p>VIP Table Seat Advance - $40 / VIP Table Seat Day Of - $50 <em>(Autographed Album Included + One $10 Drink ticket)</em></p>\r\n\r\n<p>Premium Table Seat - $80 <em>(One Autographed Book / One Autographed Album / One $10 Drink Ticket)</em></p>\r\n\r\n<p><strong>Doors:</strong> 8pm</p>\r\n\r\n<p><strong>Showtime:</strong> 8:59pm Sharp!</p>\r\n\r\n<p>Show ends at 10:30pm</p>\r\n\r\n<p>10:30-11pm (<em>pictures with artists + buying merchandise</em>)</p>\r\n\r\n<p><strong>Featuring</strong></p>\r\n\r\n<p><strong>J. IVY</strong> (spoken word)</p>\r\n\r\n<p><br>\r\nACE METAPHOR (spoken word) <br><br>\r\nTEEYA SKIPPER (R&amp;B/soul singer)<br><br>\r\nFRANKIEM NICOLI (spoken word)<br><br>\r\nVINCENT BRYANT (comedy)<br><br>\r\nYANA RENEA (dance)<br><br>\r\nB. RAEL ALI THUNDER (dance and live painting) </p>"], ["ticket_info", "$20 - $80"], ["api_id", 8596555], ["created_at", "2017-11-29 02:26:09.747972"], ["updated_at", "2017-11-29 02:26:09.747972"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Open Mic Hip Hop"], ["description", "<p><b>Open Mic Hip Hop</b><br />\n606 Entertainment Presents: Open Mic Hip Hop!\r<br />\nEvery Tuesday, always Free. \r<br />\nw/ Resident DJ's: Boy Wonder & Norm Rockwell\r<br />\nHosted By Shadow Master</p>"], ["ticket_info", "Free, 21+"], ["api_id", 8644653], ["created_at", "2017-11-29 02:26:09.749685"], ["updated_at", "2017-11-29 02:26:09.749685"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Buk & Dawreck"], ["ticket_info", "21+"], ["api_id", 8708571], ["created_at", "2017-11-29 02:26:09.751125"], ["updated_at", "2017-11-29 02:26:09.751125"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Wax On, Wax Off: An Open Turntable Event"], ["description", "Here is the deejay line-up for Tuesday, November 21.\n<br /><br />8:00 Eric Harris - Jazz\n<br />8:30 Karen Wehrle - Just Sweet Enough\n<br />9:00 Mixtress Annie - Decades\n<br />9:30 Bloodshot Scott and DJ O.D. - Pub Rock: Costello vs. Parker\n<br />10:00 Scott Tomlin - Sliced and Diced\n<br />10:30 Glenn Russell - Beat & Riff Experiments\n<br />11:00 DJ Nurse Ratched - Animal Magnetism\n<br />11:30 All Deejays - Hot Singles"], ["ticket_info", ""], ["api_id", 8721616], ["created_at", "2017-11-29 02:26:09.752514"], ["updated_at", "2017-11-29 02:26:09.752514"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Mr. Blotto, Pat Otto, Hero Jr."], ["description", "MR. BLOTTO\n<br /><br />Mr. Blotto was born in Chicago as an off-night vehicle for musicians who loved each others playing but were in different bands at the time. The only rule was that they would only play what they loved. That philosophy continues today and has led Mr. Blotto into unique musical situations.<br /><br />Mr. Blotto takes the Jam band asthetic into areas unfamiliar to the standard Jam Scene. They have been known to cover entire albums by Led Zeppelin and the Who as well as perform entire shows of Country and Reggae. Artists as diverse as the Grateful Dead, the Flaming Lips, Willie Nelson and The Velvet Underground have seen their material interpreted by Mr. Blotto in the 2000+ shows the band has performed in the last 15 years, yet covers only pepper the bands hefty catalog of original material stemming from five studio albums and other unreleased crowd favorites."], ["ticket_info", "$10"], ["api_id", 8175740], ["created_at", "2017-11-29 02:26:09.754141"], ["updated_at", "2017-11-29 02:26:09.754141"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Windy City Rev Ups"], ["description", "NO COVER BEFORE 9PM! $10 After 9PM!\n<br />The Windy Rev Ups perform revved up rock n' blues! Best described as high energy R&B mixed with originals, classic Blues standards and Rock N' Roll anthems!"], ["ticket_info", ""], ["api_id", 8641103], ["created_at", "2017-11-29 02:26:09.756091"], ["updated_at", "2017-11-29 02:26:09.756091"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Adam Ben Ezra"], ["description", "<p>Double-Bass phenomenon, multi-instrumentalist and online sensation Adam Ben Ezra; a man seemingly on a mission to bring his instrument from its status as a background note to the dominant front-presence it deserves. For the past few years Adam has been pushing his craft in new, exciting directions and carving out a unique spot for himself in today’s international musical landscape, with both his virtuosity and musicianship earning him great success along the way.</p>\r\n\r\n<p>With more than ten million hits on YouTube and a strong following on all social media platforms, it is clear Adam is a bonafide star in the internet world. However, his success is certainly not limited to the web, having performed around the globe in major international music festivals and shared stages with some of the world’s fusion giants – including Pat Metheny, Victor Wooten and Richard Bona – over the last few years. His work has been shown at industry leading publications, such as BBC World Service, CBS News, Time Magazine and The British Telegraph to name but a few. Jazz FM has defined his appearance as ”a dazzling virtuosity and breath-taking athletic performance”.</p>\r\n\r\n<p>The term “multi-instrumentalist” is often overused but in this case it couldn’t be more fitting; Adam began playing the violin at age five and picked up the guitar at age nine. Over the years he has added the Piano, Clarinet, Oud, Side Flute and even BeatBox to his arsenal, largely teaching himself each time. However, it was an introduction to the Double-Bass at age 16 that truly changed his life, when he instantly fell in love with the instrument’s rich sound.</p>\r\n\r\n<p>Drawing inspiration from heroes as diverse as Bach, Sting, Bobby McFerrin and Chick Corea, Adam made a clear decision to make his compositions current – no matter the tool used. He has consciously added new colors to his palette, incorporating elements of Jazz, Latin and Mediterranean music into his playing.</p>\r\n\r\n<p>Whether he is playing original material or his wonderfully crafted cover arrangements, ABE is a creative force of nature who can transform a room full of strangers into lifelong fans in a moment. Regardless if he’s performing solo, duo or as part of his Trio with guitar and percussion, no two shows are alike as he expertly moves from one instrument to the next, sometimes within the same song, without ever missing a beat. Using a smart combination of effects and pedals, Adam regularly loops his notes in order to deliver an authentic wall of sound, worthy of a small orchestra. With a rise in requests for international appearances and a need to push his instrument further, Adam commissioned a special one-of-a-kind 5 strings bass with an unusual removable neck setup.</p>\r\n\r\n<p>Both his Trio album (Can’t Stop Running, 2015) and latest Solo album (Pin Drop, 2017) showcase not just a virtuoso performer but also a sensitive composer with no musical boundaries, combining elements of jazz, rock and world music to create a sweeping, fascinating and versatile sound.</p>"], ["ticket_info", "$17 - $30"], ["api_id", 8326602], ["created_at", "2017-11-29 02:26:09.758092"], ["updated_at", "2017-11-29 02:26:09.758092"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Write Club"], ["description", "<p><b>Write Club</b></p> \n<p>WRITE CLUB - \"Best Literary Event,\" 2013 Chicago Reader Poll; \"Best Live Reading Series,\" 2013 Chicago Magazine's Best of Chicago, \"Top Five of Everything,\" 2013 New City Year-End Issue, \"Best Live Lit Event\" - Audience Choice, 2014 New City Best of Chicago</p>\n<p>WRITE CLUB IS:\r\n3 BOUTS OF\r\n2 OPPOSING WRITERS/2 OPPOSING IDEAS (ASSIGNED IN ADVANCE)\r\n7 MINUTES APIECE\r\nAUDIENCE PICKS A WINNER\r\nCUT OF PROCEEDS TO CHARITIES OF THE WINNERS' CHOOSING</p>\n<p>\"The punchiest thing to hit literature since Hemingway\"\r\n— Chicago Reader</p>"], ["ticket_info", "$12 - $15, 21 +"], ["api_id", 8631082], ["created_at", "2017-11-29 02:26:09.761320"], ["updated_at", "2017-11-29 02:26:09.761320"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Mike Wheeler"], ["description", "No Cover!\n<br />Mike Wheeler has been playing the blues since the mid 80's. He did his first blues gig with Muddy Waters sideman Lovey Lee in 1984. In the early 90's he played with bassist & vocalist Joan Baby.He then became a member of Cadillac Dave & The Chicago Redhots. He can be heard on their CD \"Checking On My Baby\". Mike also did a stint in the band Sam Cockrell & The Groove, playing on their cd entitled \"I'm In The Business\".\n<br />Join us for Happy Hour in the House of Blues Restaurant & Bar from 3pm to 6pm with $3 beers, $4 wines, $5 cocktails and bites!"], ["ticket_info", ""], ["api_id", 8641102], ["created_at", "2017-11-29 02:26:09.762816"], ["updated_at", "2017-11-29 02:26:09.762816"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Chicago Underground Comedy"], ["description", "<p><b>Chicago Underground Comedy</b></p> \n<p>Born in the summer of 2005 (at the back of a bar that no longer even exists),Chicago Underground Comedy has showcased some of the most clever, innovative minds in the business, while providing an exciting home for comedy fans who want juuuuust a little more spice with their order of \"Have You Ever Noticed's\".</p>\n<p>This alt-comedy haven revels in its reputation as a comic's playground, and has no regrets for any of the silly goofs, wacky antics,or plain-old tomfoolery it may have gotten into after a few drinks over the years.</p>\n<p>From traditional stand-up, to sketch comedy, to characters and things you couldn't even begin to classify, ChUC (as it's commonly referred) is THE show to see on Tuesday nights.</p>\n<p>So bring $5 and a few of your raddest pals over to the Beat Kitchen, and we'll do the rest.</p>\n<p>It's a cool show. Check us out.</p>\n<p>\"ChUC has always been the place to perform the comedy you WANT to perform, and to perform for an audience that is open to all sorts of performance, and a comedian who says the word \"perform\" too much in his quotes. Cool? Or different. I can do a hundred if you want.\" -T.J. Miller</p>\n<p>\"When I come back home to Chicago, I go out of my way to make sure my trip includes one Tuesday night, every time, so I can stop by ChUC. When friends from home want to come see me, Chicago Underground is the show I always point them to.\" - Kevin McCaffrey</p>\n<p> \"What is there to say about ChUC other than it's a comedy show done the right way in the right space. Fantastic comics, welcoming audience. Always great.\" - Kyle Kinane</p>"], ["ticket_info", "$5. 21 and Over"], ["api_id", 8650158], ["created_at", "2017-11-29 02:26:09.764269"], ["updated_at", "2017-11-29 02:26:09.764269"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gary In Charge"], ["description", "Every Tuesday Gary Mixes Drinks and Music<br /><br />A Berlin Dance Gathering Hosted by One of you Favorite Startenders!<br /><br />Its a Trip the Light Fantastic Soirée! Join Us!\n<br /><br />10PM til 4AM | 21 and Up with ID\n<br />$2 PBR | $4 Fireball | $5 Stoli Vodka"], ["ticket_info", ""], ["api_id", 8753442], ["created_at", "2017-11-29 02:26:09.766044"], ["updated_at", "2017-11-29 02:26:09.766044"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Miki Howard w/ Steve 'Stone' Huff"], ["description", "<p>Miki Howard represents passionate vocal artistry wrapped in a diminutive package of beauty, sass and candor. Grammy-nominated Howard already has a stunning catalog of music wide ranging in style – from the breezy “Come Share My Love” and the steamy funk of “Ain’t Nobody Like You” to her soul-stirring signature “Love Under New Management,” the jazzy “Imagination” and the inferno that is “That’s What Love Is” (her duet with the late, great Gerald Levert). Miki has recorded eight albums but none quite like her new 7-song EP, I Choose to Be Happy from the Something Old, Something New, Something Borrowed, Something Blues Collection. She considers this CD of live and studio material the first in a forthcoming series of mini albums: Miki Howard Reality Music Record Series #1. The proud veteran states, “I’m making music for the soundtrack of the times we are living in now.”</p>\r\n<p>The lead single is “Panther,” an affirmative declaration on the power of maturity and wisdom set to a raw Primal Funk of hand drum percussion, horns and chants co-produced by Miki with Jon Nettlesbey. In the lyric she proclaims, “I’m not a diva, I’m a Sacagawea,” name-checking the woman that assisted early America explorers Lewis &amp; Clark. Miki shares, “You have to be a soldier for what you believe in. Some people get stuck in the trenches of adversity - a Panther soldiers through. In the music, I was going for a Kanye West kind a thing – a BIG sound that stands out on the radio.” With a sly smile she adds, “It’s also about the natural sexuality we women have between the rocking chair and the rocking cradle!” “Panther” is available in a remix featuring Oakland rapper Too $hort, a move that might surprise fans of the jazzy R&amp;B queen…though it shouldn’t. “I did a lot of concerts early on with DJ Quik, Tone-Loc and N.W.A with Ice Cube and Eazy-E. I’ve known $hort since the early `90s and we’re still cool.”<br><br>In keeping with the concept of “Panther” is an intrigue-filled remake of “Soon I’ll Be Loving You Again,” a song from Marvin Gaye’s boudoir classic Motown LP I Want You (1976) that he co-wrote with living legend Leon Ware. Miki picked right up on its provocative lyric and shares it today from an evolved woman’s point of view. “Most men my age these days are married or this-n-that. So I tend to date younger men and find myself literally giving them knowledge. ‘Let me give you some head in terms of a heads up – some cerebral head of spiritual light.’”<br><br>Also revealing are “The Days of Wine and Roses” a reality version of a song about love at its best, the memories of pure love from our mom’s; and the emptiness one feels when it’s gone; and finally “I Choose To Be Happy” a mantra extracted from her signature “Love Under New Management” that Miki and her 16-piece band (under the direction of Japanese female Musical Director Noriko “Coko” Olling) recorded live at Hollywood’s Catalina Bar &amp; Grill on Sunset Blvd. These songs are about as naked and soul baring as an artist dare to be before an audience. “Those songs were recorded on the fourth show of two nights, two shows a night. I was really hoarse but liked it so much that I left them. They are sincere and real.”</p>\r\n<p>Miki was born Alicia Michelle Howard in Chicago, Illinois on September 30, 1960 - the daughter of gospel singers Clay Graham (Pilgrim Jubiliees) and Josephine Howard (Caravans). During her childhood in Chicago and Detroit, Miki met some of the best singers of the day. Early influences included family friends Dinah Washington and Aretha Franklin. Her first musical instrument was the harmonica her grandfather gave her. After her mother moved the family to Los Angeles, 15 year-old Miki received her first break when Augie Johnson, leader of the flashy vocal outfit Side Effect, spotted her in a beauty pageant and invited her to join his guys and gals group in `78. Also joining Crusaders trombonist Wayne Henderson’s At Home Productions, Miki sang backup for jazz greats Roy Ayers and Grover Washington, Jr., as well as Earth Wind &amp; Fire’s Philip Bailey, Charlie Wilson and the Gap Band, among others.<br><br>Miki Howard was signed as a solo artist to Atlantic Records in the mid-`80s and recorded her first solo album, Come Share My Love, in 1986 featuring the R&amp;B Top 5 title track and earning her a Soul Train Music Award for Best New Artist. Following 1988's Love Confessions (f/ \"Baby Be Mine\"), her third album, Miki Howard (1989), featured her first R&amp;B #1 single \"Ain't Nuthin' in the World\" (penned and produced by Jon Nettlesbey &amp; Terry Coffey). A move to Giant Records in 1991earned Miki her second R&amp;B #1 with \"Ain't Nobody Like You\" from her CD Femme Fatale which also featured a smoky rendition of Billie Holiday’s \"Good Morning Heartache.\"Casting director Robi Reed saw Miki perform Holiday tunes at Radio City Music Hall and offered her the chance to portray the legend in a nightclub scene for Spike Lee's 1992 epic, “Malcolm X.” In 2001, Miki recorded an album for Peak/Concord entitled Three Wishes receiving a Grammy nomination for Best Traditional R&amp;B Recording. <br>Today, Miki Howard is the proud single mother of three: sons Nicholas (a Head Chef) and Brandon (an entertainer), and daughter Kaitlen (also an entertainer). The grandmother of four (nickname: “G-Ma”) has also been profiled on the popular Black Music documentary TV series “Unsung.” Miki confidently reports, “In this internet age, your phone is your radio. And I found my life with social networking. It’s like sitting at a round table with people from all over the world. So don’t call this a ‘comeback!’ <br><br>Welcome to Miki’s Forward March.”</p>"], ["ticket_info", "$42-$55"], ["api_id", 8451766], ["created_at", "2017-11-29 02:26:09.767612"], ["updated_at", "2017-11-29 02:26:09.767612"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "concerts" ("title", "description", "ticket_info", "api_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Michael Zerang, Jim Baker, Aaron Zarzutzki, Carol Genetti"], ["description", "<p><b>Jim Baker & Michael Zerang - Celebrating 35 Years</b></p> \n<p>Michael Zerang and Jim Baker, longtime Chicago experimentalists, are celebrating their 35th year of making music together with a Tuesday night residency series at the Hideout this November 2017. </p>\n<p>Each night, Zerang and Baker will perform their duo for the first set, consisting of music for percussion and electronics. For the second set, they have invited various Chicago experimentalists to join them.</p> \n<p><b>Michael Zerang</b></p> \n<p>Michael Zerang was born in Chicago, Illinois, and is a first-generation American of Assyrian decent. He has been a professional musician, composer, and producer since 1976, focusing extensively on improvised music, free jazz, contemporary composition, puppet theater, experimental theater, and international musical forms.</p>\n<p>As a percussionist, composer and collaborator, Zerang has over one hundred titles in his discography and has toured nationally and internationally to 35 countries since 1981, and works with and ever-widening pool of collaborators, primarily in The United States, Western and Eastern Europe.</p>\n<p>Beginning in 2004, Zerang began to work with musicians and artists living in the Middle East. He traveled to perform, hold workshops, and study, to Yemen, Lebanon, Egypt, Syria, Turkey, United Arab Emirates, and Morocco. </p>\n<p>In November, 2007, Zerang played his first concert in Poland. Between 2007 - 2015, he had performed over 100 concerts. Several of these concerts where from existing ensembles that visited Poland, but the majority of the concert were in collaboration with Polish musicians and artists.</p>\n<p>Michael founded and was the artistic director of the Link's Hall Performance Series in Chicago from 1985-1989 where he produced over 300 concerts of jazz, traditional ethnic folk music, electronic music, and other forms of forward thinking music. He was a Board Member of Links Hall from 1989 - 2013. He continued to produce concerts at Cafe Urbus Orbis from 1994-1996, and at his own space, The Candlestick Maker in Chicago's Albany Park neighborhood, from 2001 - 2005.</p>\n<p>Zerang has collaborated extensively with contemporary theater, dance, and other multidisciplinary forms and has received three Joseph Jefferson Awards for Original Music Composition in Theater, in collaboration with Redmoon Theater, in 1996, 1998, and 2000.</p>\n<p>Michael has taught as a guest artist at The School of the Art Institute of Chicago in performance technique, sound design, and sound/music as it relates to puppetry; rhythmic analysis for dancers at The Dance Center of Columbia College, Northwestern University, and MoMing Dance and Arts Center; courses in Composer/Choreographer Collaborations at Northwestern University; music to children at The Jane Adams Hull House.</p>\n<p>Michael currently tours and holds workshops in improvisational music and percussion technique, and teaches private lessons in rhythmic analysis, music composition, and percussion technique.</p> \n<p><b>Jim Baker</b></p> \n<p>Jim Baker is an eccentric and deep-thinking musician who has jammed with some of the best in the world, from Chicago flautist and bandleader Nicole Mitchell to Sonic Youth guitarist Thurston Moore, of Massachusetts. His talent and humor shines in his solo Delmark CD, More Questions Than Answers, which is the perfect album to let play on repeat for auditory relaxation or intense retrospection — depending on your mood. If you’ve not seen and heard Baker labor like a scientist or switchboard operator over the complex assemblage of cables, pedals and knobs that he uses to control his ARP synthesizer, then you’ve not experienced the best Old School electronic music that gets played in Chicago. - Chicago Jazz Festival, 2012</p> \n<p><b>Aaron Zarzutzki /Carol Genetti</b></p>"], ["ticket_info", "$10, 21+"], ["api_id", 8471120], ["created_at", "2017-11-29 02:26:09.770159"], ["updated_at", "2017-11-29 02:26:09.770159"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering concerts/index.html.erb within layouts/application
+  [1m[36mConcert Load (29.6ms)[0m  [1m[34mSELECT "concerts".* FROM "concerts"[0m
+  Rendered concerts/index.html.erb within layouts/application (40.1ms)
+  [1m[36mUser Load (20.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (38.2ms)
+Completed 200 OK in 1291ms (Views: 1106.9ms | ActiveRecord: 105.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:26:11 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:26:11 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:26:12 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (18.7ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (25.2ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (26.4ms)
+  Rendered videos/_video_submit.html.erb (14.7ms)
+  [1m[36mMessage Exists (14.2ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (2.7ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (66.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.2ms)
+Completed 200 OK in 157ms (Views: 49.1ms | ActiveRecord: 66.1ms)
+
+
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:28:49 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.2ms)
+  Rendered videos/_video_submit.html.erb (0.9ms)
+  [1m[36mMessage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (0.9ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 41ms (Views: 35.9ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:28:49 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:28:50 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:28:50 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:29:09 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.5ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.3ms)
+  Rendered videos/_video_submit.html.erb (0.9ms)
+  [1m[36mMessage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.3ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 39ms (Views: 31.8ms | ActiveRecord: 1.9ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:29:09 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:29:10 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:29:10 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:33:01 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.4ms)
+  Rendered videos/_video_submit.html.erb (0.9ms)
+  [1m[36mMessage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 35ms (Views: 30.2ms | ActiveRecord: 1.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:33:01 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:33:01 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:33:01 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:35:49 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.4ms)
+  Rendered videos/_video_submit.html.erb (0.9ms)
+  [1m[36mMessage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 37ms (Views: 31.5ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:35:49 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:35:49 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:35:49 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:38:33 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.6ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.2ms)
+  Rendered videos/_video_submit.html.erb (0.7ms)
+  [1m[36mMessage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (0.8ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 32ms (Views: 25.4ms | ActiveRecord: 1.8ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:38:33 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:38:34 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:38:34 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:39:03 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.4ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.8ms)
+  Rendered videos/_video_submit.html.erb (1.0ms)
+  [1m[36mMessage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (8.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 1.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:39:03 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:39:03 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:39:03 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:41:01 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.2ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.4ms)
+  Rendered videos/_video_submit.html.erb (1.0ms)
+  [1m[36mMessage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (8.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 37ms (Views: 32.2ms | ActiveRecord: 1.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:41:01 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:41:01 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:41:01 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:42:10 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.2ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.3ms)
+  Rendered videos/_video_submit.html.erb (1.0ms)
+  [1m[36mMessage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.5ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 45ms (Views: 40.2ms | ActiveRecord: 1.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:42:10 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:42:11 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:42:11 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:42:21 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.2ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.5ms)
+  Rendered videos/_video_submit.html.erb (1.1ms)
+  [1m[36mMessage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.2ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 41ms (Views: 36.4ms | ActiveRecord: 1.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:42:21 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:42:21 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:42:21 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:42:42 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.2ms)
+  Rendered videos/_video_submit.html.erb (0.9ms)
+  [1m[36mMessage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 1.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:42:42 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:42:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:42:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:44:51 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.3ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.3ms)
+  Rendered videos/_video_submit.html.erb (0.9ms)
+  [1m[36mMessage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 37ms (Views: 31.5ms | ActiveRecord: 1.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:44:51 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:44:51 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:44:51 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:45:13 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.4ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.4ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.7ms)
+  Rendered videos/_video_submit.html.erb (1.3ms)
+  [1m[36mMessage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.3ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (10.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 41ms (Views: 34.4ms | ActiveRecord: 1.8ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:45:13 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:45:14 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:45:14 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:47:04 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.4ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.6ms)
+  Rendered videos/_video_submit.html.erb (1.0ms)
+  [1m[36mMessage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/Users/lobsterhead/Desktop/codeplatoon/eventshares/app/views/layouts/application.html.erb:22: syntax error, unexpected '='
+'.freeze;     if (notice !== nil || alert !== nil) 
+                            ^
+/Users/lobsterhead/Desktop/codeplatoon/eventshares/app/views/layouts/application.html.erb:22: syntax error, unexpected '='
+f (notice !== nil || alert !== nil) 
+                              ^):
+  
+app/views/layouts/application.html.erb:22: syntax error, unexpected '='
+app/views/layouts/application.html.erb:22: syntax error, unexpected '='
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:47:04 -0600
+RoomChannel stopped streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:47:17 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.3ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.4ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.7ms)
+  Rendered videos/_video_submit.html.erb (1.2ms)
+  [1m[36mMessage Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.3ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (10.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 50ms (Views: 45.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:47:18 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:47:18 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
+Started GET "/concerts/1/shared_experiences" for 127.0.0.1 at 2017-11-28 20:47:33 -0600
+Processing by SharedExperiencesController#index as HTML
+  Parameters: {"concert_id"=>"1"}
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChatBox Load (0.2ms)[0m  [1m[34mSELECT  "chat_boxes".* FROM "chat_boxes" WHERE "chat_boxes"."concert_id" = $1 LIMIT $2[0m  [["concert_id", 1], ["LIMIT", 1]]
+  Rendering shared_experiences/index.html.erb within layouts/application
+  [1m[36mMediaLink Load (0.4ms)[0m  [1m[34mSELECT "media_links".* FROM "media_links" WHERE "media_links"."concert_id" = $1[0m  [["concert_id", 1]]
+  Rendered videos/_video_carousel.html.erb (1.6ms)
+  Rendered videos/_video_submit.html.erb (1.0ms)
+  [1m[36mMessage Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "messages" WHERE "messages"."chat_box_id" = $1 LIMIT $2[0m  [["chat_box_id", 1], ["LIMIT", 1]]
+  Rendered chats/_chat_form.html.erb (1.0ms)
+  Rendered shared_experiences/index.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 1.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:47:34 -0600
+RoomChannel stopped streaming from room
+Started GET "/cable" for 127.0.0.1 at 2017-11-28 20:47:34 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-28 20:47:34 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Registered connection (Z2lkOi8vZXZlbnRzaGFyZXMvVXNlci8x)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room
