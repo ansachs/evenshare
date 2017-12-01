@@ -8,6 +8,17 @@
     padding: 0% 20%;
 }
 
+#tweets {
+  max-height: 400px;
+  overflow: hidden;
+  overflow-y:scroll;
+}
+
+#messages {
+    height: 400px;
+    border-style: none;
+}
+
 /*.jcarousel {
     position: relative;
     overflow: hidden;

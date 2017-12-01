@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130030742) do
+ActiveRecord::Schema.define(version: 20171201052426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
+    t.bigint "band_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_artists_on_band_id"
+  end
+
+  create_table "bands", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.string "genre"
@@ -30,13 +38,25 @@ ActiveRecord::Schema.define(version: 20171130030742) do
     t.index ["concert_id"], name: "index_chat_boxes_on_concert_id"
   end
 
+  create_table "concert_bands", force: :cascade do |t|
+    t.bigint "concert_id_id"
+    t.bigint "band_id_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id_id"], name: "index_concert_bands_on_band_id_id"
+    t.index ["concert_id_id"], name: "index_concert_bands_on_concert_id_id"
+  end
+
   create_table "concerts", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.string "ticket_info"
     t.integer "api_id"
+    t.bigint "venue_id"
+    t.datetime "concert_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["venue_id"], name: "index_concerts_on_venue_id"
   end
 
   create_table "media_links", force: :cascade do |t|
@@ -85,17 +105,6 @@ ActiveRecord::Schema.define(version: 20171130030742) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "venue_artist_concerts", force: :cascade do |t|
-    t.bigint "artist_id"
-    t.bigint "venue_id"
-    t.bigint "concert_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_venue_artist_concerts_on_artist_id"
-    t.index ["concert_id"], name: "index_venue_artist_concerts_on_concert_id"
-    t.index ["venue_id"], name: "index_venue_artist_concerts_on_venue_id"
   end
 
   create_table "venues", force: :cascade do |t|

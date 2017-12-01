@@ -4,24 +4,32 @@
 
 
 $(document).on('turbolinks:load', function() {
-  // scrollBottom();  
+  // scrollBottom();
+  addTweets();  
+  console.log('score')
   scrollBottom();
   jcarouselControlls();
-  // setInterval(addTweets, 10000);
-        
-
+  submitNewMessage();
+  setInterval(addTweets, 30000);
+  
 });
 
 
 
 function scrollBottom(){
-  console.log($('test'))
+  // console.log($('test'))
   chatBox = $('#chatbox');
   chatBox.scrollTop(chatBox.prop("scrollHeight"));
 }
 
 function jcarouselControlls() {
-  $('.jcarousel').jcarousel();
+  $('.jcarousel').jcarousel({
+    animation: 'fast',
+    wrap: 'circular'
+  });
+  $('.jcarousel').jcarouselAutoscroll({
+    interval: 3000
+});
   $('.jcarousel-control-prev')
             .on('jcarouselcontrol:active', function() {
                 $(this).removeClass('inactive');
@@ -64,8 +72,33 @@ function addTweets(){
 }
 
 function postMessage(json) {
-  let tweet_area = document.querySelector('#tweets');
-  let new_tweet = document.createElement('div');
-  new_tweet.innerHTML = json.message;
-  tweet_area.prepend(new_tweet)
+  console.log(json.twitterID)
+  // console.log(document.querySelector("[name='${json.twitterID}']"))
+  if (document.querySelector(`[name="${json.twitterID}"]`) === null) {
+    console.log(json.twitterID)
+    let tweet_area = document.querySelector('#tweets');
+    let new_tweet = document.createElement('div');
+    new_tweet.classList.add('list-group-item')
+    new_tweet.innerHTML = json.message;
+    console.log(json.twitterID)
+    new_tweet.setAttribute('name', json.twitterID);
+    tweet_area.prepend(new_tweet);
+  }
+
+}
+
+function submitNewMessage(){
+  // console.log('test')
+  $('[data-textarea="message"]').keydown(function(event) {
+    if (event.keyCode == 13) {
+        $('[data-send="message"]').click();
+        return false;
+     }
+  });
+}
+
+function scrollBottom(){
+  console.log($('test'))
+  chatBox = $('#chatbox');
+  chatBox.scrollTop(chatBox.prop("scrollHeight"));
 }

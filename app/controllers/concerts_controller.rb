@@ -3,8 +3,8 @@ class ConcertsController < ApplicationController
   # before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    concert = LoadConcerts.new 
-    concert.save_listings('test')
+    # concert = LoadConcerts.new 
+    # concert.save_listings('test')
     @concerts = Concert.all
     
   end

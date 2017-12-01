@@ -2,7 +2,7 @@
   <form action='/media_links' class="form-inline" method="post">
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
     <input name="user_media[concert_id]" type="hidden" value=<%= concert_id %> >
-    <input type="text" name="user_media[link]" class="form-control" placeholder="http://[]">
+    <input type="text" name="user_media[link]" class="form-control" placeholder="http://.../embed/...">
     <button type="submit" id="media_submit" class="btn my-2 my-sm-0 border border-dark">submit</button>
   </form>
 </div>
