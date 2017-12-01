@@ -19,24 +19,10 @@
   //    }
   // });
 
-$(document).on('turbolinks:load', function() {
-  // scrollBottom();  
-  submitNewMessage();
+// $(document).on('turbolinks:load', function() {
+//   // scrollBottom();  
 
-});
 
-function submitNewMessage(){
-  // console.log('test')
-  $('[data-textarea="message"]').keydown(function(event) {
-    if (event.keyCode == 13) {
-        $('[data-send="message"]').click();
-        return false;
-     }
-  });
-}
+// });
 
-function scrollBottom(){
-  console.log($('test'))
-  chatBox = $('#chatbox');
-  chatBox.scrollTop(chatBox.prop("scrollHeight"));
-}
+

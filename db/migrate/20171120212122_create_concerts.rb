@@ -6,6 +6,8 @@ class CreateConcerts < ActiveRecord::Migration[5.1]
       # t.monetize :price
       t.string   :ticket_info
       t.integer  :api_id
+      t.belongs_to :venue
+      t.datetime  :concert_date
 
       t.timestamps
     end

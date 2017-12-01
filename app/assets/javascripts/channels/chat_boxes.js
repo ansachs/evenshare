@@ -2,7 +2,7 @@
 //= require_self
 //= require_tree .
 
-this.App = {};
+// this.App = {};
 
-// App.cable = ActionCable.createConsumer("/cable");  
-App.cable = ActionCable.createConsumer();  
+// // App.cable = ActionCable.createConsumer("/cable");  
+// App.cable = ActionCable.createConsumer();  

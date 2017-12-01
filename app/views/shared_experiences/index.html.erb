@@ -33,3 +33,9 @@
     </div>
   </div>
 </div>
+
+
+<%= javascript_include_tag params[:controller] %>
+<%= javascript_include_tag 'cable' %>
+<%= javascript_include_tag 'channels/room' %>
+<%= action_cable_meta_tag %>
