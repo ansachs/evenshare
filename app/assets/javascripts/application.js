@@ -16,9 +16,7 @@
 //= require jquery
 //= require jquery-ujs
 //= require popper
-//= require cable
-//= require shared_experiences
 //= require jcarousel/jquery.jcarousel.min.js
-// require_tree .
+
 
 

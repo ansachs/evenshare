@@ -27,7 +27,7 @@ class LoadTweets
   # end
 
   def setStream(tag)
-    client.search("##{tag}").take(5) 
+    client.search("##{tag}", lang: "en").take(5) 
   end
 
 end

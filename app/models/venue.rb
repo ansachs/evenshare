@@ -1,3 +1,3 @@
 class Venue < ApplicationRecord
-  has_many :concerts, through: :venue_artist_concerts
+  has_many :concerts
 end

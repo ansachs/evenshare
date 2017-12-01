@@ -42,32 +42,34 @@ class SharedExperiencesController < ApplicationController
       # binding.pry
       message.user_id = current_user.id
       # binding.pry
-      if message.save
+      message.save
       
         # ActionCable.server.broadcast 'room',
         #   message: message.statement,
         #   user: current_user.email
         # head :ok
-        ActionCable.server.broadcast "room", chat: render_message(message)
+      ActionCable.server.broadcast "room_#{@concert.id}", chat: render_message(message)
         
         # redirect_to concert_shared_experiences_path
-      else 
+      
         # redirect_to concert_shared_experiences_path
-      end
+        render body: nil
     end
   end
 
   def tweet_feed
     # binding.pry 
-
-    # testtwit = LoadTweets.new
-    # outarray =[]
-    # twitter_hash = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
-    # tweets = testtwit.setStream("rhcp")
-    # # p tweets.length
-    # tweets.each do |tweet|
-    #   Tweet.create_with(user: tweet.user, message: tweet.text, concert_id: @concert.id).find_or_create_by(twitterID: tweet.id)
-    # end
+    recent_tweet = Tweet.where(concert_id: @concert.id).last
+    if recent_tweet == nil || Time.now - recent_tweet.created_at > 180
+      testtwit = LoadTweets.new
+      # outarray =[]
+      twitter_hash = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
+      tweets = testtwit.setStream("rhcp")
+      # p tweets.length
+      tweets.each do |tweet|
+        Tweet.create_with(user: tweet.user, message: tweet.text, concert_id: @concert.id).find_or_create_by(twitterID: tweet.id)
+      end
+    end
 
     # Tweet.create_with(user: current_tweet.user, message: current_tweet.text, concert_id: @concert_id).find_or_create_by(twitterID: current_tweet.id)
   #   end
