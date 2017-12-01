@@ -7,10 +7,12 @@ $(document).on('turbolinks:load', function() {
   // scrollBottom();  
   scrollBottom();
   jcarouselControlls();
-  addMedia();
+  // setInterval(addTweets, 10000);
         
 
 });
+
+
 
 function scrollBottom(){
   console.log($('test'))
@@ -52,6 +54,18 @@ function jcarouselControlls() {
             .jcarouselPagination();
 }
 
-function addMedia(){
-  // $('.media_submit').
+function addTweets(){
+    console.log("add tweets was run")
+    let curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
+    fetch(`/concerts/${curr_concert}/shared_experiences/tweet_feed`)
+    .then((response) => (response.json()))
+    .then((json)=>(json.forEach((obj)=>postMessage(obj))))
+          
+}
+
+function postMessage(json) {
+  let tweet_area = document.querySelector('#tweets');
+  let new_tweet = document.createElement('div');
+  new_tweet.innerHTML = json.message;
+  tweet_area.prepend(new_tweet)
 }
