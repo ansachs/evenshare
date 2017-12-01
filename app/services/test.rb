@@ -10,4 +10,7 @@
 # p Concert.new
 
 require_relative 'twitter'
+testtwit = LoadTweets.new
+p testtwit.setStream("bieber")
+
 

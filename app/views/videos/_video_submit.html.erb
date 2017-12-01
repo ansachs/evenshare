@@ -1,8 +1,9 @@
-<div id="media_submit_container">
-  <%= form_for :user_media, url: "/#{@concert.id}/media", remote: true, authenticity_token: true do |f| %>
-    <%= f.label :share_your_media %>:
-    <%= f.text_field :link, class: "form-control"%>
-    <%= f.submit "send", id: "media_submit" %>
-  <% end %>
+<div class="row col-lg-6 offset-lg-4">
+  <form action='/media_links' class="form-inline" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <input name="user_media[concert_id]" type="hidden" value=<%= concert_id %> >
+    <input type="text" name="user_media[link]" class="form-control" placeholder="http://[]">
+    <button type="submit" id="media_submit" class="btn my-2 my-sm-0 border border-dark">submit</button>
+  </form>
 </div>
 <br>
