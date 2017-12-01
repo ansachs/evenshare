@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :messages
   has_many :chat_boxes, through: :message
+  has_many :media_links
 end

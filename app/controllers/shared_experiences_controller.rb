@@ -1,5 +1,5 @@
 class SharedExperiencesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :create]
+  before_action :authenticate_user!, except: [:index, :create, :tweet_feed]
   before_action :set_concert
   # before_action :set_chat_box
   # after_create_commit { MessageBroadcastJob.perform_later self }
@@ -20,41 +20,19 @@ class SharedExperiencesController < ApplicationController
 
   end
 
-  def add_media
-    binding.pry
-    if current_user == nil
-      redirect_to concert_shared_experiences_path, notice: 'must login in to add media'
-    elsif params['user_media']['link'].match? (/^https:\/\/.*embed.*/)
-      media = MediaLink.new(media_params)
-      # binding.pry
-      media.concert_id = @concert.id
-      media.user_id = current_user.id
-      # binding.pry
-      if media.save
-        # binding.pry 
-        redirect_to concert_shared_experiences_path
-      else 
-        # binding.pry 
-        redirect_to concert_shared_experiences_path, notice: 'link did not save'
-      end
+
+
+  def media_search
+    possible_user = User.where(name: params[:query])
+    if possible_user.length > 0
+      # binding.pry 
+      redirect_to user_media_links_path(user_id: possible_user[0].id, concert_id: @concert.id)
     else
-      redirect_to concert_shared_experiences_path, notice: 'invalid link'
+      redirect_to concert_shared_experiences_path, notice: 'user does not exist'
     end
-    # binding.pry 
-    
   end
 
-  def show
-    
-  end
-
-  def new
-    # @location = Location.new
-  end
-
-  def edit
-  end
-
+  
   def create
     # binding.pry
     if current_user == nil
@@ -78,20 +56,30 @@ class SharedExperiencesController < ApplicationController
       end
     end
   end
-    
-  def update
-    # binding.pry
-  #   if @location.update(location_params)
-  #     redirect_to locations_path, notice: 'Location was successfully updated.'
-  #   else
-  #     render :edit
-  #   end
-  # end
 
-  # def destroy
-  #   @location.destroy
-  #   redirect_to locations_path, notice: 'Location was successfully destroyed.'
+  def tweet_feed
+    # binding.pry 
+
+    # testtwit = LoadTweets.new
+    # outarray =[]
+    # twitter_hash = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
+    # tweets = testtwit.setStream("rhcp")
+    # # p tweets.length
+    # tweets.each do |tweet|
+    #   Tweet.create_with(user: tweet.user, message: tweet.text, concert_id: @concert.id).find_or_create_by(twitterID: tweet.id)
+    # end
+
+    # Tweet.create_with(user: current_tweet.user, message: current_tweet.text, concert_id: @concert_id).find_or_create_by(twitterID: current_tweet.id)
+  #   end
+        # respond_to do |format|
+        #   format.json {render json: {data: outarray} }
+        # end
+    # render formats: :json
+    # p Tweet.first.to_json 
+    render json: Tweet.first(10)
   end
+    
+  
 
   private
 
@@ -101,10 +89,6 @@ class SharedExperiencesController < ApplicationController
 
   def message_params  
     params['message'].permit(:statement, :chat_box_id)
-  end
-
-  def media_params
-    params['user_media'].permit(:link)
   end
 
   def render_message(message) 

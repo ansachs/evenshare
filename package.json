@@ -4,7 +4,9 @@
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
     "coffeescript": "1.12.7",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "jquery-ujs": "^1.2.2",
+    "oauth": "^0.9.15"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.4"

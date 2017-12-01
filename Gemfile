@@ -44,6 +44,8 @@ gem 'pry-remote'
 gem 'pry-byebug'
 
 gem 'twitter'
+gem 'rack-cors'
+gem 'popper_js', '~> 1.12.3'
 # gem 'warden'
 # gem 'jquery-rails'
 

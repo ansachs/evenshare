@@ -1,21 +1,22 @@
 <div class="container">
-    <!-- <div class="row">
-      <h1><%= @concert.title %></h1>
-    </div> -->
+   
+  <div class="row offset-lg-6 col-lg-4">
+      
+  </div>
   <div class="row">
     <% # => binding.pry %>
-      <%= render partial: 'videos/video_carousel', locals: {media: @media} %>
-    </div>
-    <div class="row">
+    <%= render partial: 'videos/video_carousel', locals: {media: @media} %>
+  </div>
+  <div class="row">
       <% #binding.pry %>
-      <%= render partial: 'videos/video_submit' %>
+    <%= render partial: 'videos/video_submit', locals: {concert_id: @concert.id} %>
       <% #binding.pry %>
   </div>
   <div class="row">
     <div class="col-lg-8">
       <div class="panel panel-default" id="chatbox">
         <% if @messages.any? %>
-          <div class="panel-body" id="messages">
+          <div class="panel-body bg-light" id="messages">
             <%= render partial: 'chats/chat', collection: @messages, as: :message %>
           </div>
         <%else%>
@@ -26,8 +27,8 @@
       <%= render partial: 'chats/chat_form', locals: {message: @message, concert: @concert}%>
     </div>
     <div class="col-lg-4">
-      <div>
-        <button class="btn btn-default" type="submit">Button</button>
+      <div class="card">
+        <%= render partial: 'twitter/tweets', locals: {concert: @concert.title} %> 
       </div>
     </div>
   </div>
