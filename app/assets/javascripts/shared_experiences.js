@@ -74,7 +74,7 @@ function addTweets(){
 function postMessage(json) {
   console.log(json.twitterID)
   // console.log(document.querySelector("[name='${json.twitterID}']"))
-  if (document.querySelector(`[name="${json.twitterID}"]`) === null) {
+  if (document.querySelector("[name=" + json.twitterID + "]") === null) {
     console.log(json.twitterID)
     let tweet_area = document.querySelector('#tweets');
     let new_tweet = document.createElement('div');
