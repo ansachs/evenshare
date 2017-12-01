@@ -64,7 +64,7 @@ function jcarouselControlls() {
 
 function addTweets(){
     console.log("add tweets was run")
-    let curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
+    var curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
     fetch(`/concerts/${curr_concert}/shared_experiences/tweet_feed`)
     .then((response) => (response.json()))
     .then((json)=>(json.forEach((obj)=>postMessage(obj))))
