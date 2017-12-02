@@ -60,7 +60,7 @@ class SharedExperiencesController < ApplicationController
   def tweet_feed
     # binding.pry 
     recent_tweet = Tweet.where(concert_id: @concert.id).last
-    if recent_tweet == nil || Time.now - recent_tweet.created_at > 180
+    if recent_tweet == nil || Time.now - recent_tweet.created_at > 60
       testtwit = LoadTweets.new
       # outarray =[]
       twitter_hash = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
@@ -78,7 +78,7 @@ class SharedExperiencesController < ApplicationController
         # end
     # render formats: :json
     # p Tweet.first.to_json 
-    render json: Tweet.first(10)
+    render json: Tweet.last(10).reverse
   end
     
   

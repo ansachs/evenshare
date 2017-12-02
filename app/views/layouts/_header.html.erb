@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-faded">
+<nav class="navbar navbar-light py-1 fixed-top" style="background-color: darkgray">
   <!-- <div class="container-fluid"> -->
     <div class="navbar-header">
       <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -13,8 +13,8 @@
       <form class="form-inline" role="search" action=<%= "/concerts/#{@concert.id}/shared_experiences/media_search" %> >
           <input type="hidden" _method="get">
           <!-- <input type="hidden" name="concert_id" value=<%= @concert.id %> > -->
-          <input type="text" name="query" class="form-control mr-sm-2 border border-dark" placeholder="Search for media by user">
-        <button type="submit" class="btn my-2 my-sm-0 border border-dark">search for media by user</button>
+          <input type="text" name="query" class="form-control-sm border border-dark input-sm" placeholder="Search for media by user">
+        <button type="submit" class="btn-sm border border-dark">search for media by user</button>
       </form>
     <% end %>
 
