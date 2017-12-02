@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://do312.com/artists/queens-of-the-stone-age.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 02 Dec 2017 20:19:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2545'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d50557eda9a016a442daa3fd831104c621512245948; expires=Sun, 02-Dec-18
+        20:19:08 GMT; path=/; domain=.do312.com; HttpOnly
+      Status:
+      - 200 OK
+      Vary:
+      - DS-App-Mode,Accept,Accept-Encoding
+      Etag:
+      - '"14b351364669db9704a3f276e51aa65d"'
+      Last-Modified:
+      - Sat, 02 Dec 2017 20:15:00 GMT
+      Cache-Control:
+      - max-age=900, public
+      Ds-App-Mode:
+      - desktop
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - 1dca44c9773ad09369b4fb9b16dee64a
+      X-Runtime:
+      - '0.232457'
+      X-Content-Digest:
+      - e4d0ed1901f29c96ca05dffd5ad247a42446aba0
+      Age:
+      - '0'
+      X-Rack-Cache:
+      - miss, store
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 3c70fab9a0497149-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"artist":{"id":38835,"title":"Queens Of The Stone Age","permalink":"/artists/queens-of-the-stone-age","data_path":"/artists/38835/quickie","hometown":"","popularity":34948.0,"youtube_id":"y4zr3ZPSDac","spotify_id":"4pejUc4iciQfgdX6OKulQn","description":"The
+        revolving-door music collective Queens of the Stone Age, based around singer-songwriter
+        and guitarist Josh Homme, was one of the most interesting and critically acclaimed
+        hard rock bands of the 2000s. The band''s eclectic approach to rock produced
+        arty, blues-based albums that wandered stylistically from gentle acoustic
+        songs and Delta blues stomps to Black Sabbath-like metal and the thick, sludgy
+        garage rock characteristic of early-Nineties grunge bands.","raw_description":false,"followers_count":49800,"social":{"home":{"url":"http://www.qotsa.com/","name":"qotsa.com"},"twitter":{"url":"http://twitter.com/qotsa","name":"qotsa"},"instagram":{"url":"http://instagram.com/queensofthestoneage","name":"queensofthestoneage"},"facebook":{"url":"https://www.facebook.com/QOTSA/","name":"/QOTSA/"}},"related_artists":[{"id":32309,"title":"Jane''s
+        Addiction","permalink":"janes-addiction"},{"id":32483,"title":"The Dead Weather","permalink":"the-dead-weather"},{"id":32492,"title":"Clutch","permalink":"clutch"},{"id":32577,"title":"Them
+        Crooked Vultures","permalink":"them-crooked-vultures"},{"id":34254,"title":"The
+        Raconteurs","permalink":"the-raconteurs"},{"id":34702,"title":"Mastodon","permalink":"mastodon"},{"id":34920,"title":"Deftones","permalink":"deftones"},{"id":36263,"title":"Fu
+        Manchu","permalink":"fu-manchu"},{"id":38278,"title":"Wolfmother","permalink":"wolfmother"},{"id":44759,"title":"Eagles
+        of Death Metal","permalink":"eagles-of-death-metal"},{"id":52552,"title":"Mark
+        Lanegan","permalink":"mark-lanegan"},{"id":59293,"title":"Alice in Chains","permalink":"alice-in-chains"},{"id":68578,"title":"Soundgarden","permalink":"soundgarden-"},{"id":159414,"title":"Faith
+        No More","permalink":"faith-no-more"},{"id":163943,"title":"Kyuss","permalink":"kyuss"},{"id":163944,"title":"Monster
+        Magnet","permalink":"monster-magnet"},{"id":181514,"title":"MELVINS","permalink":"melvins"},{"id":204722,"title":"Desert
+        Sessions","permalink":"desert-sessions"},{"id":586285,"title":"Black Rebel
+        Motorcycle Club","permalink":"black-rebel-motercycle-club"},{"id":973148,"title":"At
+        The Drive In","permalink":"at-the-drive-in-uaaxbxjo"}],"imagery":{"default":"v1497555681/band-38835.jpg","icon":"v1497555681/band-38835.jpg"}},"event_groups":[{"date":"2017-12-02","events":[{"id":8502037,"permalink":"/events/2017/12/2/wkqx-the-night-we-stole-christmas-queens-of-the-stone-age-more","presented_by":"WKQX
+        The Night We Stole Christmas","title":"Queens of the Stone Age w/ Run the
+        Jewels, Biffy Clyro","description":"This is an ALL AGES event. Aragon Ballroom
+        is a standing room only venue, all tickets are General Admission unless otherwise
+        stated. There is NO re-entry.","excerpt":"This is an ALL AGES event. Aragon
+        Ballroom is a standing room only venue, all tickets are General Admission
+        unless otherwise stated. There is NO re-entry.","category":"Music","category_param":"music","conference_category_param":"","begin_time":"2017-12-02T19:00:00-06:00","tz_adjusted_begin_date":"2017-12-02T19:00:00-06:00","tz_adjusted_end_date":"2017-12-03T02:00:00-06:00","begin_date":"2017-12-02","past":false,"end_date":null,"end_time":null,"votes":2298,"ticket_info":"$41","allstar_votes":7,"is_lens":false,"ticket_onsale_time":null,"tickets_onsale_today":false,"is_free":false,"is_ongoing":false,"imagery":{"photo":"v1506360018/event-8502037.jpg","poster":""},"rating":null,"doors":false,"tracking":{"impression":"/t/l/e/8502037","hover":"/t/h/e/8502037","click":"/t/c/e/8502037/http%3A%2F%2Fdostuffmedia.com%3A80%2Fevents%2F8502037"},"tracking_urls":{"impression":"https://t.dostuffmedia.com/t/l/e/8502037","hover":"https://t.dostuffmedia.com/t/h/e/8502037","click":"https://t.dostuffmedia.com/t/c/e/8502037/http%3A%2F%2Fdo312.com%3A80%2Fevents%2F8502037"},"popularity":2372.0,"sold_out":false,"favorite":false,"actions":{"add":true,"rsvp":false,"buy":true,"buy_vip":false,"win":true},"venue":{"id":7404,"title":"Aragon
+        Ballroom","permalink":"/venues/aragon-ballroom","latitude":41.9691200256348,"longitude":-87.6580200195312,"popularity":14.0,"address":"1106
+        W. Lawrence Ave.","city":"Chicago","state":"IL","zip":"","full_address":"1106
+        W. Lawrence Ave., Chicago, IL","is_english":true},"artists":[{"id":38835,"title":"Queens
+        Of The Stone Age","permalink":"/artists/queens-of-the-stone-age","data_path":"/artists/38835/quickie","hometown":"","popularity":34948.0,"youtube_id":"y4zr3ZPSDac","spotify_id":"4pejUc4iciQfgdX6OKulQn"},{"id":753608,"title":"Run
+        the Jewels","permalink":"/artists/run-the-jewels","data_path":"/artists/753608/quickie","hometown":"Brooklyn,
+        NY","popularity":5634.0,"youtube_id":"6k7kk1lUnis","spotify_id":"4RnBFZRiMLRyZy0AzzTg2C"},{"id":83433,"title":"Biffy
+        Clyro","permalink":"/artists/biffy-clyro","data_path":"/artists/83433/quickie","hometown":"Glasgow","popularity":58.0,"youtube_id":"UxUb9Yzr1sE","spotify_id":"1km0R7wy712AzLkA1WjKET"}],"rsvp":false,"giveaway":{"app_only":false,"giveaway_ask_birth":false,"giveaway_ask_gender":false,"giveaway_ask_name":true,"giveaway_ask_spam":true,"giveaway_ask_zip":false,"giveaway_opt_in":true,"giveaway_opt_in_text":"Send
+        me updates from WKQX!","is_standalone":false,"like_button_text":null,"offer":"Enter
+        To Win A Pair Of Tickets!","question_text":"","action":"/events/8502037/giveaway","ask21":false,"force21":false,"minimum_age":21,"alt_terms_url":""},"buy_url":"http://ticketmaster.evyy.net/c/253185/264167/4272?u=http%3A%2F%2Fwww.ticketmaster.com%2Fevent%2F04005335EF00481C","eager":false}]}],"date_ranges":{"start":"2017-12-02","end":"2017-12-02"},"heading_text":"Upcoming
+        Queens Of The Stone Age Shows in Chicago","heading_text_tag":"h2","ad_placement":[],"views":{"sort":"popularity","mode":"list"},"paging":{"entry_name":"event","count":1,"first":1,"last":1,"path":"/artists/queens-of-the-stone-age","formatted_count":"1","page_size":25,"total_pages":1,"current_page":1,"offset_value":0,"listing_ad_position":12,"listing_ad_top_position":3,"label":"Event"},"photos_base":"https://res.cloudinary.com/dostuff-media/image/upload/","api_version":0.005}'
+    http_version: 
+  recorded_at: Sat, 02 Dec 2017 20:19:08 GMT
+recorded_with: VCR 3.0.3

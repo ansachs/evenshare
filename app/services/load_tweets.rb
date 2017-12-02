@@ -3,7 +3,7 @@
 require 'twitter'
 
 class LoadTweets 
-  attr_reader :client
+  # attr_reader :client
 
   def initialize()
     @client = self.createClient()
@@ -13,9 +13,9 @@ class LoadTweets
   def createClient
     return Twitter::REST::Client.new do |config|
       config.consumer_key        = "boX4lrChqQi3LB9fJYSfYnzbT"
-      config.consumer_secret     = "kj2NTBpt6IxZNqtW1wWz7VCcpr7uYwJWzPKCppS5ZwbSaHhijq"
+      config.consumer_secret     = Rails.application.secrets.twitter_consumer_secret
       config.access_token        = "935516830508216321-AiV47Wioo6Uw97srLznYtUG5lBk7yri"
-      config.access_token_secret = "37z2jQLOfZXczLGGWMfp7VKHv0keJjs2YyCdd2885sVB8"
+      config.access_token_secret = Rails.application.secrets.twitter_access_token_secret
     end
   end
 
@@ -27,7 +27,7 @@ class LoadTweets
   # end
 
   def setStream(tag)
-    client.search("##{tag}", lang: "en").take(5) 
+    @client.search("##{tag}", lang: "en").take(5) 
   end
 
 end
