@@ -3,9 +3,13 @@ class ConcertsController < ApplicationController
   # before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   def index
-    # concert = LoadConcerts.new 
+    binding.pry
+    concert_object = LoadConcerts.new
+    concert_object.concert_logic(params)
+     
     # concert.save_listings('test')
-    @concerts = Concert.all
+    @concerts = Concert.where(concert_date: )
+  end
     
   end
 
