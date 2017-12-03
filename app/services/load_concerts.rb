@@ -22,6 +22,19 @@ class LoadConcerts
       end
   end
 
+  def concert_logic(params)
+    if params['date'] 
+      # converted_date = (params['date'].to_time + 5.hours).to_datetime
+      return found_concerts = self.get_listings(params['date'].to_datetime)
+    elsif Concert.where(concert_date: DateTime.now.beginning_of_day..DateTime.now).length == 0
+        # concert_object = LoadConcerts.new
+      return todays_concerts = self.get_listings(Time.now)
+      # self.store_concerts(todays_concerts)
+    else
+      return Concert.where(concert_date: params['date']..params['date'].to_time + 24)
+    end
+  end
+
   def get_listings(date)
 
       format_date = date.strftime('%Y/%m/%d')
