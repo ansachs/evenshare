@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', function() {
   submitNewMessage();
   
   // uncomment below to initiate polling for tweets
-  // setInterval(addTweets, 5000);
+  setInterval(addTweets, 10000);
   
 });
 

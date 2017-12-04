@@ -49,7 +49,12 @@ class LoadConcerts
             save_band(band_info['artist'])
           end
         end
-        concert_list << Concert.create_with(title: event['title'], description: event['description'], ticket_info: event['ticket_info'], concert_date: event['begin_time'].to_datetime).find_or_create_by(api_id: event['id'])  
+        current_concert = Concert.find_or_initialize_by(api_id: event['id'])  do |current_concert|  current_concert.update_attributes({title: event['title'], description: event['description'], ticket_info: event['ticket_info'], concert_date: event['begin_time'].to_datetime})
+        end
+
+        if current_concert.save
+          concert_list << current_concert
+        end 
     end
     return concert_list
   end
