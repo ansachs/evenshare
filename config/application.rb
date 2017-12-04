@@ -13,6 +13,7 @@ Bundler.require(*Rails.groups)
 
 module Eventshares
   class Application < Rails::Application
+    config.time_zone = "Central Time (US & Canada)"
     # Initialize configuration defaults for originally generated Rails version.
 #     config.load_defaults 5.1
 #     config.middleware.insert_before 0, Rack::Cors do

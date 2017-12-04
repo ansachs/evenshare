@@ -3,7 +3,7 @@ class CreateBands < ActiveRecord::Migration[5.1]
     create_table :bands do |t|
       t.string :title
       t.string :description
-      t.string :genre
+      t.string :twitter
 
       t.timestamps
     end
