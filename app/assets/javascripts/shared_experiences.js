@@ -67,8 +67,8 @@ function addTweets(){
 
 function postMessage(json) {
   if (document.querySelector("[name='" + json.twitterID + "']") === null) {
-    let tweet_area = document.querySelector('#tweets');
-    let new_tweet = document.createElement('div');
+    var tweet_area = document.querySelector('#tweets');
+    var new_tweet = document.createElement('div');
     new_tweet.classList.add('list-group-item')
     new_tweet.innerHTML = json.message;
     new_tweet.setAttribute('name', json.twitterID);
