@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171201052426) do
   create_table "bands", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "genre"
+    t.string "twitter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 20171201052426) do
   end
 
   create_table "concert_bands", force: :cascade do |t|
-    t.bigint "concert_id_id"
-    t.bigint "band_id_id"
+    t.bigint "concert_id"
+    t.bigint "band_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["band_id_id"], name: "index_concert_bands_on_band_id_id"
-    t.index ["concert_id_id"], name: "index_concert_bands_on_concert_id_id"
+    t.index ["band_id"], name: "index_concert_bands_on_band_id"
+    t.index ["concert_id"], name: "index_concert_bands_on_concert_id"
   end
 
   create_table "concerts", force: :cascade do |t|
@@ -83,10 +83,11 @@ ActiveRecord::Schema.define(version: 20171201052426) do
   create_table "tweets", force: :cascade do |t|
     t.string "user"
     t.string "message"
-    t.integer "concert_id"
+    t.bigint "concert_id"
     t.bigint "twitterID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["concert_id"], name: "index_tweets_on_concert_id"
   end
 
   create_table "users", force: :cascade do |t|

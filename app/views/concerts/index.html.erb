@@ -42,7 +42,8 @@
       <% @concerts.each do |concert|%>
       <tr>
         <td><%= link_to concert.title, concert_shared_experiences_path(concert_id: concert.id) %></td>
-        <td><%= concert.description %></td>
+        <% description = concert.description %>
+        <td><%= raw(description) %></td>
         <td><%= concert.ticket_info %></td>
 
       </tr>

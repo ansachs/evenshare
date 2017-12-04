@@ -17,6 +17,7 @@
 //= require jquery-ujs
 //= require popper
 //= require jcarousel/jquery.jcarousel.min.js
+//= require cable
 
 
 

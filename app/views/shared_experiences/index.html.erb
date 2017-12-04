@@ -7,11 +7,7 @@
     <% # => binding.pry %>
     <%= render partial: 'videos/video_carousel', locals: {media: @media} %>
   </div>
-  <div class="row">
-      <% #binding.pry %>
-    <%= render partial: 'videos/video_submit', locals: {concert_id: @concert.id} %>
-      <% #binding.pry %>
-  </div>
+  
   <div class="row">
     <div class="col-lg-8">
       <div class="panel panel-default" id="chatbox">
@@ -31,6 +27,9 @@
         <%= render partial: 'twitter/tweets', locals: {concert: @concert.title} %> 
       </div>
     </div>
+  </div>
+  <div class='row'>
+    <%= button_to'return to concert list', concerts_path, method: :get %>
   </div>
 </div>
 

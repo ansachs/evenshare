@@ -13,7 +13,7 @@
       <form class="form-inline" role="search" action=<%= "/concerts/#{@concert.id}/shared_experiences/media_search" %> >
           <input type="hidden" _method="get">
           <!-- <input type="hidden" name="concert_id" value=<%= @concert.id %> > -->
-          <input type="text" name="query" class="form-control-sm border border-dark input-sm" placeholder="Search for media by user">
+          <input type="text" name="query" class="form-control-sm border border-dark input-sm" placeholder="user name">
         <button type="submit" class="btn-sm border border-dark">search for media by user</button>
       </form>
     <% end %>
