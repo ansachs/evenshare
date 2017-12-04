@@ -2,5 +2,6 @@ class Band < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   has_many :artists
-  has_many :concerts, through: :concert_band
+  has_many :concert_bands
+  has_many :concerts, through: :concert_bands
 end

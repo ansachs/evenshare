@@ -1,9 +1,9 @@
 
 <div class="jcarousel-wrapper">
   <div class="jcarousel">
-      <ul>
-          <% media.each do |frame| %>
-            <li><iframe src=<%= frame.link %> frameborder="0" allowfullscreen></iframe></li>
+      <ul id="media-browser">
+          <% media.each do |video| %>
+            <%= render partial: 'videos/video', locals: {video: video} %>
           <% end %>
       </ul>
 

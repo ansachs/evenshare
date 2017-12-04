@@ -54,7 +54,7 @@ have a fixed width and height (but it's not required).
     margin: 20px auto;
     position: relative;
     border: 10px solid #fff;
-    width: 620px;
+    width: 920px;
     height: 170px;
     -webkit-border-radius: 5px;
        -moz-border-radius: 5px;
@@ -83,7 +83,7 @@ have a fixed width and height (but it's not required).
 
 .jcarousel {
     position: relative;
-    width: 600px;
+    width: 900px;
     overflow: hidden;
 }
 

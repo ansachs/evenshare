@@ -1,23 +1,21 @@
-// # Place all the behaviors and hooks related to the matching controller here.
-// # All this logic will automatically be available in application.js.
-// # You can use CoffeeScript in this file: http://coffeescript.org/
 
+addTweets(); 
 
 $(document).on('turbolinks:load', function() {
-  // scrollBottom();
-  addTweets();  
+  
   console.log('score')
-  scrollBottom();
   jcarouselControlls();
+  scrollBottom();
   submitNewMessage();
-  setInterval(addTweets, 5000);
+  
+  // uncomment below to initiate polling for tweets
+  // setInterval(addTweets, 5000);
   
 });
 
 
 
 function scrollBottom(){
-  // console.log($('test'))
   chatBox = $('#chatbox');
   chatBox.scrollTop(chatBox.prop("scrollHeight"));
 }
@@ -27,9 +25,6 @@ function jcarouselControlls() {
     animation: 'fast',
     wrap: 'circular'
   });
-  $('.jcarousel').jcarouselAutoscroll({
-    interval: 3000
-});
   $('.jcarousel-control-prev')
             .on('jcarouselcontrol:active', function() {
                 $(this).removeClass('inactive');
@@ -63,17 +58,13 @@ function jcarouselControlls() {
 }
 
 function addTweets(){
-    console.log("add tweets was run")
     var curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
     fetch(`/concerts/${curr_concert}/shared_experiences/tweet_feed`)
     .then((response) => (response.json()))
-    .then((json)=>(json.forEach((obj)=>postMessage(obj))))
-          
+    .then((json)=>(json.forEach((obj)=>postMessage(obj))))    
 }
 
 function postMessage(json) {
-  console.log(json.twitterID)
-  // console.log(document.querySelector("[name='${json.twitterID}']"))
   if (document.querySelector("[name='" + json.twitterID + "']") === null) {
     console.log(json.twitterID)
     let tweet_area = document.querySelector('#tweets');
@@ -84,15 +75,15 @@ function postMessage(json) {
     new_tweet.setAttribute('name', json.twitterID);
     tweet_area.prepend(new_tweet);
   }
-
 }
 
 function submitNewMessage(){
-  // console.log('test')
-  $('[data-textarea="message"]').keydown(function(event) {
-    if (event.keyCode == 13) {
-        $('[data-send="message"]').click();
-        return false;
+  $('[data-textarea="message"]').keydown(
+    function(event) {
+      if (event.keyCode == 13) {
+          $('[data-send="message"]').click();
+          event.preventDefault();
+          // return false;
      }
   });
 }
@@ -102,3 +93,4 @@ function scrollBottom(){
   chatBox = $('#chatbox');
   chatBox.scrollTop(chatBox.prop("scrollHeight"));
 }
+

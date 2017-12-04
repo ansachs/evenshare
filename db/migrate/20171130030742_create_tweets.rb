@@ -3,7 +3,7 @@ class CreateTweets < ActiveRecord::Migration[5.1]
     create_table :tweets do |t|
       t.string :user
       t.string :message
-      t.integer :concert_id
+      t.belongs_to :concert
       t.bigint :twitterID
 
       t.timestamps
