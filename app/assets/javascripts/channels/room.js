@@ -7,7 +7,6 @@ if(!App.messages) {
       received: function(data) {
         $("#messages").removeClass('hidden');
         $('[data-textarea="message"]').val(" ");
-        console.log(data);
           if (data.media) {
             $('#media-browser').append(data.media);
             $('.jacrousel').jcarousel('reload')
