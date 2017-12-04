@@ -22,7 +22,7 @@ class SharedExperiencesController < ApplicationController
   def create
     if current_user == nil
       redirect_to concert_shared_experiences_path, notice: 'must login in to use chat'
-    elsif params['message']['statement'].match?(/^https:\/\/www.youtube.com\/embed\/[0-9a-zA-Z_]*$/)
+    elsif params['message']['statement'].match?(/^https:\/\/www.youtube.com\/embed\/[0-9a-zA-Z_\-]*$/)
     params['message']['link'] = params['message'].delete('statement')
     new_link = MediaLink.new(media_params)
     new_link.user_id = current_user.id
