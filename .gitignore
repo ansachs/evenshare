@@ -11,6 +11,7 @@
 /tmp/
 /spec/services/support/fixtures
 /public/assets/
+/config/secrets.yml
 
 # Used by dotenv library to load environment variables.
 # .env
