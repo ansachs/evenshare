@@ -10,6 +10,7 @@
 /test/version_tmp/
 /tmp/
 /spec/services/support/fixtures
+/public/assets/
 
 # Used by dotenv library to load environment variables.
 # .env
