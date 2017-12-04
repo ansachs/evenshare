@@ -45,7 +45,7 @@ class SharedExperiencesController < ApplicationController
   def tweet_feed
     current_band = @concert.bands.first
     recent_tweet = Tweet.where(concert_id: @concert.id).last
-    if recent_tweet == nil || Time.now - recent_tweet.created_at > 60
+    if recent_tweet == nil || Time.now - recent_tweet.created_at > 30
       testtwit = LoadTweets.new
       twitter_hash = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
       tweets = testtwit.setStream(current_band.twitter)
