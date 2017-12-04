@@ -61,18 +61,16 @@ function jcarouselControlls() {
 function addTweets(){
     var curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
     fetch("/concerts/" + curr_concert + "/shared_experiences/tweet_feed")
-    .then((response) => (response.json()))
-    .then((json)=>(json.forEach((obj)=>postMessage(obj))))    
+    .then(function(response) {return response.json()})
+    .then(function(json) {json.forEach(function(obj){postMessage(obj)})})    
 }
 
 function postMessage(json) {
   if (document.querySelector("[name='" + json.twitterID + "']") === null) {
-    console.log(json.twitterID)
     let tweet_area = document.querySelector('#tweets');
     let new_tweet = document.createElement('div');
     new_tweet.classList.add('list-group-item')
     new_tweet.innerHTML = json.message;
-    console.log(json.twitterID)
     new_tweet.setAttribute('name', json.twitterID);
     tweet_area.prepend(new_tweet);
   }
@@ -90,7 +88,6 @@ function submitNewMessage(){
 }
 
 function scrollBottom(){
-  console.log($('test'))
   chatBox = $('#chatbox');
   chatBox.scrollTop(chatBox.prop("scrollHeight"));
 }
