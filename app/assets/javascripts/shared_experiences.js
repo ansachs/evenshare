@@ -1,16 +1,20 @@
 
 chatWelcome();
-addTweets(); 
+setInterval(addTweets(), 10000);
 
 $(document).on('turbolinks:load', function() {
   
   
   jcarouselControlls();
   scrollBottom();
+  setInterval(addTweets, 5000);
   submitNewMessage();
+//   setInterval(function () {
+//     alert("test");
+// }, 10000);
   
   // uncomment below to initiate polling for tweets
-  setInterval(addTweets, 10000);
+  
   
 });
 
@@ -59,15 +63,31 @@ function jcarouselControlls() {
 }
 
 function addTweets(){
+    console.log('ran tweets')
     var curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
     fetch("/concerts/" + curr_concert + "/shared_experiences/tweet_feed")
-    .then(function(response) {return response.json()})
-    .then(function(json) {json.forEach(function(obj){postMessage(obj)})})    
+    .then(function(response){ 
+      if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
+          return(response.json());
+        }
+      })
+    .then(function(json) {json.forEach(function(obj){postMessage(obj)})})
+    .catch(function(error) {});    
+
+    // .then(function(response) {return response.json()})
+    // .then(function(json){console.log(json)})
+    
+      // .then(function(response) {console.log(response.json())} )
+      // 
+        
 }
 
 function postMessage(json) {
   if (document.querySelector("[name='" + json.twitterID + "']") === null) {
     var tweet_area = document.querySelector('#tweets');
+    console.log(tweet_area)
     var new_tweet = document.createElement('div');
     new_tweet.classList.add('list-group-item')
     new_tweet.innerHTML = json.message;

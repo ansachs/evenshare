@@ -3,10 +3,15 @@ class SharedExperiencesController < ApplicationController
   before_action :set_concert
  
   def index
+
+    # if @concert === nil
+    #   redirect_to concerts_path, notice: 'concert does not exist'
+    # end
     @chat_box = ChatBox.find_or_create_by(concert_id: @concert.id)
     @messages = Message.where(chat_box_id: @chat_box.id)
     @media = MediaLink.where(concert_id: @concert.id)
     @new_media = MediaLink.new
+    @tweets = Tweet.where(concert_id: @concert.id).last(5).reverse
   end
 
   def media_search
@@ -45,16 +50,26 @@ class SharedExperiencesController < ApplicationController
   def tweet_feed
     current_band = @concert.bands.first
     recent_tweet = Tweet.where(concert_id: @concert.id).last
-    if recent_tweet == nil || Time.now - recent_tweet.created_at > 30
+    if recent_tweet == nil || Time.now - recent_tweet.created_at > 60
       testtwit = LoadTweets.new
       twitter_hash = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
       tweets = testtwit.setStream(current_band.twitter)
+      new_tweet_array = []
       tweets.each do |tweet|
-        Tweet.create_with(user: tweet.user, message: tweet.text, concert_id: @concert.id).find_or_create_by(twitterID: tweet.id)
+        Tweet.find_or_initialize_by(twitterID: tweet.id) do |new_tweet|
+          new_tweet.update_attributes({user: tweet.user, message: tweet.text, concert_id: @concert.id})
+          new_tweet.save
+          new_tweet_array << new_tweet
+          end
       end
     end
-    # binding.pry
-    render json: Tweet.where(concert_id: @concert.id).last(10).reverse
+    # new_tweet_array = []
+    # new_tweet_array << Tweet.create(user: 'bob', message: Time.now.to_s, concert_id: 1, twitterID: rand(1..9999999))
+    if new_tweet_array && new_tweet_array.length > 0
+      render json: new_tweet_array.reverse
+    else
+      render body: nil
+    end
   end
 
   private

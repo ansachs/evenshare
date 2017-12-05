@@ -24,7 +24,9 @@
     </div>
     <div class="col-lg-4">
       <div class="card">
-        <%= render partial: 'twitter/tweets', locals: {concert: @concert.title} %> 
+        <div class="list-group" id="tweets">
+          <%= render partial: 'twitter/tweets', collection: @tweets, as: :tweet %> 
+          </div>
       </div>
     </div>
   </div>
