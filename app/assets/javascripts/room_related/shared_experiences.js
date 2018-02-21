@@ -81,20 +81,23 @@ function jcarouselControlls() {
 }
 
 function addTweets(){
+
     var curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
     fetch("/concerts/" + curr_concert + "/shared_experiences/tweet_feed")
     .then(function(response){ 
       if (!response.ok) {
           throw Error(response.statusText);
         } else {
-          $('#no-tweets').remove()
           return(response.json());
         }
       })
-    .then(function(json) {json.forEach(
-      function(obj){
-        postMessage(obj)
-      })})
+    .then(
+      function(json) {
+        $('#no-tweets').remove()
+        json.forEach(
+          function(obj){postMessage(obj)}
+          )
+      })
     .catch(function(error) {});    
 
     
