@@ -27,7 +27,6 @@ class loadJS extends HTMLElement {
       addTweets();
       jcarouselControlls();
       scrollBottom();
-      // submitNewMessage();
       setInterval(addTweets, 60000);
     
   }
