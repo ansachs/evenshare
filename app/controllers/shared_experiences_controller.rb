@@ -32,21 +32,30 @@ class SharedExperiencesController < ApplicationController
 
       redirect_to concert_shared_experiences_path, notice: 'must login in to use chat'
 
-    elsif params['message']['statement'].match?(Regexp.union(youtube_reg))
+    elsif params['message']['statement'].strip.match?(Regexp.union(youtube_reg))
 
-      if params['message']['statement'].match?(youtube_reg[1])
-        embed = params['message']['statement'].match(/^https:\/\/youtu.be\/([0-9a-zA-Z_\-]*$)/)[1]
+      if params['message']['statement'].strip.match?(youtube_reg[1])
+        embed = params['message']['statement'].strip.match(/^https:\/\/youtu.be\/([0-9a-zA-Z_\-]*$)/)[1]
         params['message']['link'] = "https://www.youtube.com/embed/" + embed 
       else
-        params['message']['link'] = params['message'].delete('statement')
+        params['message']['link'] = params['message'].strip.delete('statement')
       end
 
-      MediaLink.find_or_initialize_by(media_params) do |new_link|
-        new_link.user_id = current_user.id
-        new_link.media_type = "video"
-        new_link.concert_id = @concert.id
-        new_link.save
-        ActionCable.server.broadcast "room_#{@concert.id}", media: render_video(new_link)
+      # binding.pry
+
+      record = MediaLink.find_or_initialize_by(media_params)
+      
+      if record.new_record?
+        record.user_id = current_user.id
+        record.media_type = "video"
+        record.concert_id = @concert.id
+        record.save
+        ActionCable.server.broadcast "room_#{@concert.id}", media: render_video(record)
+      else
+        message = Message.new({statement: "video already posted: " + record.link})
+        message.user_id = 1
+        message.save
+        ActionCable.server.broadcast "room_#{@concert.id}", chat: render_message(message)
       end
 
       render body:nil
@@ -96,7 +105,7 @@ class SharedExperiencesController < ApplicationController
     @concert = Concert.find(params[:concert_id])
   end
 
-  def message_params  
+  def message_params
     params['message'].permit(:statement, :chat_box_id)
   end
 

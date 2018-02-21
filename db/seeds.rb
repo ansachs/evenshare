@@ -1,6 +1,6 @@
 
 
-User.create(name: "sanchez", email: 'jon@gmail.com', password: 'codeplatoon')
+User.create(name: "admin", email: 'admin@gmail.com', password: 'codeplatoon')
 # Concert.create(title: 'Red Hot Chilli Peppers', description: '90s rock', ticket_info: 'free', api_id: 9999, concert_date: DateTime.now)
 # Concert.create(title: 'katy Perry', description: 'wearing many outfits', ticket_info: 'free', api_id: 9999, concert_date: DateTime.now)
 # MediaLink.create(concert_id: 1, user_id: 1, media_type: 'video', link:"https://www.youtube.com/embed/Q0oIoR9mLwc")

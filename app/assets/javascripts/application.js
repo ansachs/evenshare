@@ -17,6 +17,21 @@
 //= require jquery-ujs
 //= require popper
 //= require jcarousel/jquery.jcarousel.min.js
+//= require cable
 
+class loadJS extends HTMLElement {
+  constructor() {
+    super();
+  }
+    connectedCallback() {
+      addTweets();
+      jcarouselControlls();
+      scrollBottom();
+      // submitNewMessage();
+      setInterval(addTweets, 60000);
+    
+  }
+}
 
+customElements.define('load-js', loadJS);
 
