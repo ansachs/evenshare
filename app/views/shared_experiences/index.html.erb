@@ -1,7 +1,9 @@
 <div class="container">
    
-  <div class="row offset-lg-6 col-lg-4">
-      
+  <div class="row">
+    <div class="col-12 mt-1 text-center">
+      <div><%= @concert.title %></div>
+    </div>
   </div>
   <div class="row">
     <% # => binding.pry %>
@@ -25,8 +27,12 @@
     <div class="col-lg-4">
       <div class="card">
         <div class="list-group" id="tweets">
-          <%= render partial: 'twitter/tweets', collection: @tweets, as: :tweet %> 
-          </div>
+          <% if @messages.any? %>
+            <%= render partial: 'twitter/tweets', collection: @tweets, as: :tweet %> 
+          <% else %>
+            <div class='list-group-item' style=""> no tweets available </div>  
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

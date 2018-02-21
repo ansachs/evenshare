@@ -4,9 +4,6 @@ class SharedExperiencesController < ApplicationController
  
   def index
 
-    # if @concert === nil
-    #   redirect_to concerts_path, notice: 'concert does not exist'
-    # end
     @chat_box = ChatBox.find_or_create_by(concert_id: @concert.id)
     @messages = Message.where(chat_box_id: @chat_box.id)
     @media = MediaLink.where(concert_id: @concert.id)
@@ -23,19 +20,37 @@ class SharedExperiencesController < ApplicationController
     end
   end
 
-  
   def create
+
+
+    youtube_reg = [
+      /^https:\/\/www.youtube.com\/embed\/[0-9a-zA-Z_\-]*$/,
+      /^https:\/\/youtu.be\/[0-9a-zA-Z_\-]*$/
+      ]
+
     if current_user == nil
+
       redirect_to concert_shared_experiences_path, notice: 'must login in to use chat'
-    elsif params['message']['statement'].match?(/^https:\/\/www.youtube.com\/embed\/[0-9a-zA-Z_\-]*$/)
-    params['message']['link'] = params['message'].delete('statement')
-    new_link = MediaLink.new(media_params)
-    new_link.user_id = current_user.id
-    new_link.media_type = "video"
-    new_link.concert_id = @concert.id
-    new_link.save
-    ActionCable.server.broadcast "room_#{@concert.id}", media: render_video(new_link)
-        render body: nil
+
+    elsif params['message']['statement'].match?(Regexp.union(youtube_reg))
+
+      if params['message']['statement'].match?(youtube_reg[1])
+        embed = params['message']['statement'].match(/^https:\/\/youtu.be\/([0-9a-zA-Z_\-]*$)/)[1]
+        params['message']['link'] = "https://www.youtube.com/embed/" + embed 
+      else
+        params['message']['link'] = params['message'].delete('statement')
+      end
+
+      MediaLink.find_or_initialize_by(media_params) do |new_link|
+        new_link.user_id = current_user.id
+        new_link.media_type = "video"
+        new_link.concert_id = @concert.id
+        new_link.save
+        ActionCable.server.broadcast "room_#{@concert.id}", media: render_video(new_link)
+      end
+
+      render body:nil
+
     else
 
       message = Message.new(message_params)
@@ -48,12 +63,17 @@ class SharedExperiencesController < ApplicationController
   end
 
   def tweet_feed
-    current_band = @concert.bands.first
+    top_band_with_twitter = @concert.bands.where.not('twitter': nil)
+    if top_band_with_twitter == []
+      current_handle = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
+    else
+      current_handle = top_band_with_twitter.first.twitter
+    end
+
     recent_tweet = Tweet.where(concert_id: @concert.id).last
     if recent_tweet == nil || Time.now - recent_tweet.created_at > 60
       testtwit = LoadTweets.new
-      twitter_hash = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
-      tweets = testtwit.setStream(current_band.twitter)
+      tweets = testtwit.setStream(current_handle)
       new_tweet_array = []
       tweets.each do |tweet|
         Tweet.find_or_initialize_by(twitterID: tweet.id) do |new_tweet|
@@ -63,8 +83,6 @@ class SharedExperiencesController < ApplicationController
           end
       end
     end
-    # new_tweet_array = []
-    # new_tweet_array << Tweet.create(user: 'bob', message: Time.now.to_s, concert_id: 1, twitterID: rand(1..9999999))
     if new_tweet_array && new_tweet_array.length > 0
       render json: new_tweet_array.reverse
     else
@@ -88,12 +106,10 @@ class SharedExperiencesController < ApplicationController
 
   def render_message(message) 
     ApplicationController.renderer.render(partial: 'chats/chat', locals: { message: message }) 
-      # binding.pry
   end
 
   def render_video(new_link) 
     ApplicationController.renderer.render(partial: 'videos/video', locals: { video: new_link }) 
-      # binding.pry
   end
 
 end

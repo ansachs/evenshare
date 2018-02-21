@@ -1,20 +1,13 @@
 
 chatWelcome();
-setInterval(addTweets(), 10000);
 
 $(document).on('turbolinks:load', function() {
   
-  
+  addTweets();
   jcarouselControlls();
   scrollBottom();
-  setInterval(addTweets, 5000);
   submitNewMessage();
-//   setInterval(function () {
-//     alert("test");
-// }, 10000);
-  
-  // uncomment below to initiate polling for tweets
-  
+  setInterval(addTweets, 60000);
   
 });
 
@@ -63,7 +56,6 @@ function jcarouselControlls() {
 }
 
 function addTweets(){
-    console.log('ran tweets')
     var curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
     fetch("/concerts/" + curr_concert + "/shared_experiences/tweet_feed")
     .then(function(response){ 
@@ -76,11 +68,7 @@ function addTweets(){
     .then(function(json) {json.forEach(function(obj){postMessage(obj)})})
     .catch(function(error) {});    
 
-    // .then(function(response) {return response.json()})
-    // .then(function(json){console.log(json)})
     
-      // .then(function(response) {console.log(response.json())} )
-      // 
         
 }
 
@@ -102,7 +90,7 @@ function submitNewMessage(){
       if (event.keyCode == 13) {
           $('[data-send="message"]').click();
           event.preventDefault();
-          // return false;
+          $('[data-textarea="message"]').val("");
      }
   });
 }
@@ -114,7 +102,6 @@ function scrollBottom(){
 
 function chatWelcome() {
   welcome = document.createElement('p')
-  // welcome_message = "test"
   welcome_message =  "<b class='font-weight-bold text-dark'>Gigshare:</b>Welcome to gigshare, chat about this great concert or share a link by pasting it in the chat box in the form <b class='font-weight-bold text-dark'>http://www.youtube.com/embed/[youtube id]:</b>"
   welcome.innerHTML = welcome_message;
   document.querySelector('#messages').append(welcome);
