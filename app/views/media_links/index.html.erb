@@ -16,7 +16,7 @@
       <tbody>
         <% @user_media.each do |media| %>
           <tr>
-            <td><%= link_to Concert.where(id: media.concert_id)[0].title, concert_shared_experiences_path(concert_id: media.concert_id) %></td>
+            <td><%= link_to Concert.where(id: media.concert_id)[0].title, concert_shared_experiences_path(concert_id: media.concert_id), data: { no_turbolink: true } %></td>
             <td><%= media.created_at.strftime('%m/%d/%Y') %></td>
             <td><iframe src=<%= media.link %> frameborder="0" allowfullscreen></iframe></td>
             <td><%= link_to 'Delete', user_media_link_path(id: media.id, user: media.user_id), method: :delete, data: { confirm: 'Are you sure?' } %>
