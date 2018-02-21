@@ -87,9 +87,8 @@ function addTweets(){
       if (!response.ok) {
           throw Error(response.statusText);
         } else {
-          return(
-            $('#no-tweets').remove()
-            response.json());
+          $('#no-tweets').remove()
+          return(response.json());
         }
       })
     .then(function(json) {json.forEach(
