@@ -31,7 +31,7 @@
           <% if @messages.any? %>
             <%= render partial: 'twitter/tweets', collection: @tweets, as: :tweet %> 
           <% else %>
-            <div class='list-group-item' style=""> no tweets available </div>  
+            <div class='list-group-item' id="no-tweets" style=""> no tweets available </div>  
           <% end %>
         </div>
       </div>

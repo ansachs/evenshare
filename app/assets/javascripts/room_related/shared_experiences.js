@@ -12,18 +12,30 @@ chatWelcome();
   
 // });
 
+class someStuff extends HTMLElement {
+  constructor() {
+    super();
+  }
+    connectedCallback() {
+      addTweets();
+      jcarouselControlls();
+      scrollBottom();
+      setInterval(addTweets, 60000);
+    
+  }
+}
 
+customElements.define('some-stuff', someStuff);
 
-document.body.appendChild(new loadJS());
+document.body.appendChild(new someStuff);  
 
-$(document).on('keydown', '[data-textarea="message"]', (event) => {
+$(document).on('keydown', '[data-textarea="message"]', function(event) {
       if (event.keyCode == 13) {
           $('[data-send="message"]').click();
           event.preventDefault();
           $('[data-textarea="message"]').val("");
    }
 })
-
 
 
 function scrollBottom(){
@@ -75,10 +87,15 @@ function addTweets(){
       if (!response.ok) {
           throw Error(response.statusText);
         } else {
-          return(response.json());
+          return(
+            $('#no-tweets').remove()
+            response.json());
         }
       })
-    .then(function(json) {json.forEach(function(obj){postMessage(obj)})})
+    .then(function(json) {json.forEach(
+      function(obj){
+        postMessage(obj)
+      })})
     .catch(function(error) {});    
 
     

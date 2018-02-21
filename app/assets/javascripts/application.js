@@ -19,18 +19,5 @@
 //= require jcarousel/jquery.jcarousel.min.js
 //= require cable
 
-class loadJS extends HTMLElement {
-  constructor() {
-    super();
-  }
-    connectedCallback() {
-      addTweets();
-      jcarouselControlls();
-      scrollBottom();
-      setInterval(addTweets, 60000);
-    
-  }
-}
 
-customElements.define('load-js', loadJS);
 
