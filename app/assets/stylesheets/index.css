@@ -23,6 +23,14 @@
    /*max-height: 500px; */
 }
 
+.brand-holder {
+    text-align:center;
+}
+
+.brand-icon {
+    max-width: 100px;
+}
+
 /*.jcarousel {
     position: relative;
     overflow: hidden;
