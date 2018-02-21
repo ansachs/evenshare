@@ -9,7 +9,7 @@
 }
 
 #tweets {
-  max-height: 500px;
+  height: 400px;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -23,6 +23,21 @@
    /*max-height: 500px; */
 }
 
+.brand-holder {
+    text-align:center;
+}
+
+.brand-icon {
+    max-width: 100px;
+}
+
+.tweet {
+    /*padding: 25px;*/
+}
+
+#tweets {
+    overflow-y: scroll
+}
 /*.jcarousel {
     position: relative;
     overflow: hidden;

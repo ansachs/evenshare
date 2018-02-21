@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root to: "concerts#index"
 
+  get 'about', to: 'concerts#about'
+
   # post '/:concert_id/media', to: 'shared_experiences#add_media'
   get '/concerts/:concert_id/shared_experiences/media_search', to: 'shared_experiences#media_search'
 

@@ -1,13 +1,10 @@
-# require 'faraday'
-# require 'faraday_middleware'
+
 require 'twitter'
 
 class LoadTweets 
-  # attr_reader :client
 
   def initialize()
     @client = self.createClient()
-    # @concert_id = concert_id
   end
 
   def createClient
@@ -18,13 +15,6 @@ class LoadTweets
       config.access_token_secret = Rails.application.secrets.twitter_access_token_secret
     end
   end
-
-  # def saveTweet(current_tweet)
-  #   p "test"
-  #   if current_tweet != nil
-  #     Tweet.create_with(user: current_tweet.user, message: current_tweet.text, concert_id: @concert_id).find_or_create_by(twitterID: current_tweet.id)
-  #   end
-  # end
 
   def setStream(tag)
     @client.search("##{tag}", lang: "en", result_type: "recent").take(5) 

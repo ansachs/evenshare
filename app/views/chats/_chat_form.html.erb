@@ -1,4 +1,4 @@
-<%= form_for :message, url: "/concerts/#{@concert.id}/shared_experiences", remote: true, authenticity_token: true do |f| %>
+<%= form_for :message, url: "/concerts/#{@concert.id}/shared_experiences", remote: true, authenticity_token: true, html: {id: "submit-text"} do |f| %>
   <%= f.label :say_something %>:
   <%= f.text_field :statement, class: "form-control", data: {textarea: "message"} %>
   <%= f.hidden_field :chat_box_id, value: @chat_box.id %>

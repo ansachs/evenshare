@@ -1,12 +1,17 @@
+
 <div class="container">
    
-  <div class="row offset-lg-6 col-lg-4">
-      
+  <div class="row">
+    <div class="col-12 mt-1 text-center">
+      <div><%= @concert.title %></div>
+    </div>
   </div>
   <div class="row">
     <% # => binding.pry %>
     <%= render partial: 'videos/video_carousel', locals: {media: @media} %>
   </div>
+
+  
   
   <div class="row">
     <div class="col-lg-8">
@@ -24,19 +29,24 @@
     </div>
     <div class="col-lg-4">
       <div class="card">
-        <div class="list-group" id="tweets">
-          <%= render partial: 'twitter/tweets', collection: @tweets, as: :tweet %> 
-          </div>
+        <div id="tweets">
+          <% if @tweets.any? %>
+            <%= render partial: 'twitter/tweets', collection: @tweets, as: :tweet %> 
+          <% else %>
+            <div class='list-group-item' id="no-tweets"> no tweets available </div>  
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
   <div class='row'>
-    <%= button_to'return to concert list', concerts_path, method: :get %>
+    <%= button_to'return to concert list', concerts_path, method: :get, params: {date: params[:date]} %>
   </div>
 </div>
 
 
-<%= javascript_include_tag params[:controller] %>
-<%= javascript_include_tag 'cable' %>
-<%= javascript_include_tag 'channels/room' %>
 <%= action_cable_meta_tag %>
+
+<%= javascript_include_tag 'room_related' %>
+
+

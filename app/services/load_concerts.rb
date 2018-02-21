@@ -23,7 +23,7 @@ class LoadConcerts
       date_in_time_type = params['date'].to_time
       date_zeroed = date_in_time_type.beginning_of_day
     end
-    # the purpose of this logic was to reduce API calls
+    
     if Concert.where(concert_date: ((date_zeroed).to_datetime..(date_in_time_type + 24.hours).to_datetime)).exists?
       return Concert.where(concert_date: ((date_zeroed).to_datetime..(date_in_time_type + 24.hours).to_datetime))
     else 
@@ -34,7 +34,7 @@ class LoadConcerts
   def get_listings(date)
       
       format_date = date.strftime('%Y/%m/%d')
-      # binding.pry
+      
       response = @connection.get "events/#{format_date}.json"
       return response.body['events']
   end
@@ -42,19 +42,33 @@ class LoadConcerts
   def format_data(concert_array)
     concert_list =[]
     concert_array.each do | event |
-
-        event['artists'].each do |artist|
-          if Band.where(title: artist['title']) == nil
-            band_info = get_band(artist['permalink'])
-            save_band(band_info['artist'])
-          end
-        end
-        current_concert = Concert.find_or_initialize_by(api_id: event['id'])  do |current_concert|  current_concert.update_attributes({title: event['title'], description: event['description'], ticket_info: event['ticket_info'], concert_date: event['begin_time'].to_datetime})
+      
+        current_concert = Concert.find_or_initialize_by(api_id: event['id'])  do |current_concert| 
+          current_concert.update_attributes({title: event['title'], description: event['description'], ticket_info: event['ticket_info'], concert_date: event['begin_time'].to_datetime})
         end
 
         if current_concert.save
           concert_list << current_concert
         end 
+
+        event['artists'].each do |artist|
+          
+          current_band = Band.where(title: artist['title']).first
+          
+          if current_band == nil
+            band_info = get_band(artist['permalink'])
+            current_band = save_band(band_info)
+
+          end
+
+          if current_band == nil
+            binding.pry
+          end
+
+          ConcertBand.create(concert_id: current_concert.id, band_id: current_band.id)
+
+        end
+
     end
     return concert_list
   end
@@ -65,7 +79,15 @@ class LoadConcerts
   end
 
   def save_band(artist)
-    Band.create(title: artist['title'], description: artist['description'], twitter: [artist['social']['twitter']]  )
+    
+    begin
+      current_artist_twitter = artist['social']['twitter']['name']
+    rescue
+      current_artist_twitter = nil
+    end
+    current_band = Band.new(title: artist['title'], description: artist['description'], twitter: current_artist_twitter)
+    current_band.save
+    return current_band
   end
 
 end
