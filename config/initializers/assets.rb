@@ -13,6 +13,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.precompile += %w( shared_experiences.js )
-Rails.application.config.assets.precompile += %w( channels/room.js)
+# Rails.application.config.assets.precompile += %w( shared_experiences.js )
+# Rails.application.config.assets.precompile += %w( channels/room.js)
 Rails.application.config.assets.precompile += %w( cable.js )
+# 
+Rails.application.config.assets.precompile += %w( room_related )
