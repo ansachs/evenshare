@@ -133,7 +133,7 @@ function scrollBottom(){
 
 function chatWelcome() {
   welcome = document.createElement('p')
-  welcome_message =  "<b class='font-weight-bold text-dark'>Gigshare:</b>Welcome to gigshare, chat about this great concert or share a link by pasting it in the chat box in the form <b class='font-weight-bold text-dark'>http://www.youtube.com/embed/[youtube id]:</b>"
+  welcome_message =  "<b class='font-weight-bold text-dark'>Gigshare:</b>Welcome to gigshare, chat about this great concert or share a link by pasting it in the chat box in the form: <br /> <b class='font-weight-bold text-dark'>http://www.youtube.com/embed/[youtube id]</b> <br /> <b class='font-weight-bold text-dark'>http://www.youtu.be/[youtube id]</b>"
   welcome.innerHTML = welcome_message;
   document.querySelector('#messages').append(welcome);
 }
