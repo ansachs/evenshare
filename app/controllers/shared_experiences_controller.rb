@@ -36,7 +36,7 @@ class SharedExperiencesController < ApplicationController
         embed = params['message']['statement'].strip.match(/^https:\/\/youtu.be\/([0-9a-zA-Z_\-]*$)/)[1]
         params['message']['link'] = "https://www.youtube.com/embed/" + embed 
       else
-        params['message']['link'] = params['message'].strip.delete('statement')
+        params['message']['link'] = params['message']['statement'].strip
       end
 
 
