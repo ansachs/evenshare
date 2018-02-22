@@ -27,8 +27,6 @@ class SharedExperiencesController < ApplicationController
       /^https:\/\/www.youtube.com\/embed\/[0-9a-zA-Z_\-]*$/,
       /^https:\/\/youtu.be\/[0-9a-zA-Z_\-]*$/
       ]
-    # if current_user == nil
-    #   redirect_to concert_shared_experiences_path, notice: 'must login in to use chat'
 
     if params['message']['statement'].strip.match?(Regexp.union(youtube_reg))
 
