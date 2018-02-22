@@ -19,10 +19,11 @@
         <h1 class="display-3">Gigshare</h1>  
       </div>
     </div>
+    
     <form action='/concerts' class="form float-right" >
       <input name="authenticity_token" value="<%= form_authenticity_token %>" 
       _method="get" type="hidden">
-      <input type="date" name="date" placeholder="http://.../embed/...">
+      <input type="date" name="date" value=<%= @date %> >
       <button type="submit" id="media_submit" >submit</button>
     </form>
 
@@ -43,7 +44,7 @@
     <tbody>
       <% @concerts.each do |concert|%>
       <tr>
-        <td><%= link_to concert.title, concert_shared_experiences_path(concert_id: concert.id) %></td>
+        <td><%= link_to concert.title, concert_shared_experiences_path(concert_id: concert.id, date: @date) %></td>
         <% description = concert.description %>
         <td><%= raw(description) %></td>
         <td><%= concert.ticket_info %></td>

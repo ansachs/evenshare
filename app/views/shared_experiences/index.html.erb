@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class='row'>
-    <%= button_to'return to concert list', concerts_path, method: :get %>
+    <%= button_to'return to concert list', concerts_path, method: :get, params: {date: params[:date]} %>
   </div>
 </div>
 
