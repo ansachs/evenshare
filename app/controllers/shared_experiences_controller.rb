@@ -4,15 +4,14 @@ class SharedExperiencesController < ApplicationController
   
  
   def index
-    @chat_box = ChatBox.find_or_create_by(concert_id: @concert.id)
-    @messages = Message.where(chat_box_id: @chat_box.id)
+
+    @messages = Message.where(chat_box_id: @concert.id)
     @media = MediaLink.where(concert_id: @concert.id)
-    # @new_media = MediaLink.new
     @tweets = Tweet.where(concert_id: @concert.id).last(5).reverse
-    # binding.pry
   end
 
   def media_search
+
     possible_user = User.where(name: params[:query])
     if possible_user.length > 0
       redirect_to user_media_links_path(user_id: possible_user[0].id, concert_id: @concert.id)
@@ -58,15 +57,16 @@ class SharedExperiencesController < ApplicationController
     else
 
       message = Message.new(message_params)
+      message.chat_box_id = @concert.id
       message.user_id = current_user.id
       message.save
-
       ActionCable.server.broadcast "room_#{@concert.id}", chat: render_message(message)
         render body: nil
     end
   end
 
   def tweet_feed
+
     top_band_with_twitter = @concert.bands.where.not('twitter': nil)
     if top_band_with_twitter == []
       current_handle = @concert.title.gsub(/[^A-Za-z0-9]/, '_')
@@ -87,6 +87,7 @@ class SharedExperiencesController < ApplicationController
           end
       end
     end
+
     if new_tweet_array && new_tweet_array.length > 0
       render json: new_tweet_array.reverse
     else
