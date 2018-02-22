@@ -1,14 +1,15 @@
 class SharedExperiencesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :create, :tweet_feed]
   before_action :set_concert
+  before_action :authenticate_user!, only: [:create]
+  
  
   def index
-
     @chat_box = ChatBox.find_or_create_by(concert_id: @concert.id)
     @messages = Message.where(chat_box_id: @chat_box.id)
     @media = MediaLink.where(concert_id: @concert.id)
-    @new_media = MediaLink.new
+    # @new_media = MediaLink.new
     @tweets = Tweet.where(concert_id: @concert.id).last(5).reverse
+    # binding.pry
   end
 
   def media_search
@@ -22,17 +23,14 @@ class SharedExperiencesController < ApplicationController
 
   def create
 
-
     youtube_reg = [
       /^https:\/\/www.youtube.com\/embed\/[0-9a-zA-Z_\-]*$/,
       /^https:\/\/youtu.be\/[0-9a-zA-Z_\-]*$/
       ]
+    # if current_user == nil
+    #   redirect_to concert_shared_experiences_path, notice: 'must login in to use chat'
 
-    if current_user == nil
-
-      redirect_to concert_shared_experiences_path, notice: 'must login in to use chat'
-
-    elsif params['message']['statement'].strip.match?(Regexp.union(youtube_reg))
+    if params['message']['statement'].strip.match?(Regexp.union(youtube_reg))
 
       if params['message']['statement'].strip.match?(youtube_reg[1])
         embed = params['message']['statement'].strip.match(/^https:\/\/youtu.be\/([0-9a-zA-Z_\-]*$)/)[1]
@@ -41,7 +39,6 @@ class SharedExperiencesController < ApplicationController
         params['message']['link'] = params['message'].strip.delete('statement')
       end
 
-      # binding.pry
 
       record = MediaLink.find_or_initialize_by(media_params)
       

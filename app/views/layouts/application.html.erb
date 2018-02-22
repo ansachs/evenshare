@@ -16,16 +16,11 @@
   </head>
 
   <body style="padding-top: 50px">
-    
-    <% if notice != nil %>
+        
         <div class='container alert-warning' >
-          <h4 class="notice"><%= notice %></h4>
+          <h4 class="notice"></h4>
         </div>
-    <% elsif alert != nil %>
-      <div class='container alert-warning' >
-          <h4 class="alert"><%= alert %></h4>
-      </div>
-    <% end %>
+
     <%= yield %>
   </body>
 </html>

@@ -10,6 +10,8 @@
     <% # => binding.pry %>
     <%= render partial: 'videos/video_carousel', locals: {media: @media} %>
   </div>
+
+  
   
   <div class="row">
     <div class="col-lg-8">
@@ -41,6 +43,7 @@
     <%= button_to'return to concert list', concerts_path, method: :get %>
   </div>
 </div>
+
 
 <%= action_cable_meta_tag %>
 

@@ -12,15 +12,19 @@ chatWelcome();
   
 // });
 
+$(document).ready(function(){
+  submitNewMessage();
+})
+
 class someStuff extends HTMLElement {
   constructor() {
     super();
   }
     connectedCallback() {
-      addTweets();
+      // addTweets();
       jcarouselControlls();
       scrollBottom();
-      setInterval(addTweets, 60000);
+      // setInterval(addTweets, 60000);
     
   }
 }
@@ -29,12 +33,50 @@ customElements.define('some-stuff', someStuff);
 
 document.body.appendChild(new someStuff);  
 
-$(document).on('keydown', '[data-textarea="message"]', function(event) {
-      if (event.keyCode == 13) {
-          $('[data-send="message"]').click();
+// $(document).on('keydown', '[data-textarea="message"]', function(event) {
+//       if (event.keyCode == 13) {
+//           $('[data-send="message"]').click();
+//           event.preventDefault();
+//           $('[data-textarea="message"]').val("");
+//    }
+// })
+
+$(document).on('submit', '#submit-text', function(event) {
+  console.log('this ran')
           event.preventDefault();
+          const curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
+          const url = '/concerts/' + curr_concert + '/shared_experiences';
+          const text = $.trim(('[data-textarea="message"]').val())
+
+          console.log(url);
+
+          // fetch('/vote_reg', {
+          //   method: 'POST',
+          //   credentials: 'include',
+          //   headers: {
+          //     'Content-Type': 'application/json',
+          //     'X-CSRF-TOKEN': this.props.auth_token
+          //   },
+          //   body: JSON.stringify({message: {statement: text}, concert_id: curr_concert})
+          // }).then((response) => {
+          //   if (!response.ok) { throw response }
+          //   return response.json();
+          // }).then((json)=>{this.notice(json)
+          // }).catch( err =>{console.log(err)})
+
+
+        //   fetch(url, {
+        //   method: 'post',
+        //   body: JSON.stringify(opts)
+        // }).then(function(response) {
+        //   return response.json();
+        // }).then(function(data) {
+        //   ChromeSamples.log('Created Gist:', data.html_url);
+        // });
           $('[data-textarea="message"]').val("");
-   }
+          
+
+          
 })
 
 
@@ -116,13 +158,31 @@ function postMessage(json) {
 }
 
 function submitNewMessage(){
-  $('[data-textarea="message"]').keydown(
-    function(event) {
-      if (event.keyCode == 13) {
-          $('[data-send="message"]').click();
-          event.preventDefault();
-          $('[data-textarea="message"]').val("");
-     }
+  $('#submit-text').submit(
+    
+    function(e) {
+      e.preventDefault();
+      const curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
+      const url = '/concerts/' + curr_concert + '/shared_experiences';
+      const text = $('[data-textarea="message"]').val()
+      const token = $('[name="authenticity_token"]').first().val()
+
+      fetch(url, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-TOKEN': token
+        },
+        body: JSON.stringify({message: {statement: text}, concert_id: curr_concert})
+      }).then((response) => {
+        if (response.redirected == true) {
+          $('.notice').html("please register or login before chatting")
+          $('[data-textarea="message"]').val("")
+          setTimeout(function(){document.querySelector('.notice').innerHTML = ""},10000);
+        }
+      }).catch( err =>{console.log(err)})
+      return false;
   });
 }
 
