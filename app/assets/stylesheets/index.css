@@ -31,6 +31,13 @@
     max-width: 100px;
 }
 
+.tweet {
+    /*padding: 25px;*/
+}
+
+#tweets {
+    overflow-y: scroll
+}
 /*.jcarousel {
     position: relative;
     overflow: hidden;

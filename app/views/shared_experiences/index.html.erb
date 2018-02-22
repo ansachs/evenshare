@@ -29,7 +29,7 @@
     </div>
     <div class="col-lg-4">
       <div class="card">
-        <div class="list-group" id="tweets">
+        <div id="tweets">
           <% if @tweets.any? %>
             <%= render partial: 'twitter/tweets', collection: @tweets, as: :tweet %> 
           <% else %>
