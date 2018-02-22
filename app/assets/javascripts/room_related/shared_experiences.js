@@ -2,81 +2,12 @@
 chatWelcome();
 
 
-// $(document).on('turbolinks:load', function() {
-//   console.log(window.location.pathname)
-//   addTweets();
-//   jcarouselControlls();
-//   scrollBottom();
-//   submitNewMessage();
-//   // setInterval(addTweets, 60000);
-  
-// });
-
 $(document).ready(function(){
+  addTweets();
   submitNewMessage();
-})
-
-class someStuff extends HTMLElement {
-  constructor() {
-    super();
-  }
-    connectedCallback() {
-      // addTweets();
-      jcarouselControlls();
-      scrollBottom();
-      // setInterval(addTweets, 60000);
-    
-  }
-}
-
-customElements.define('some-stuff', someStuff);
-
-document.body.appendChild(new someStuff);  
-
-// $(document).on('keydown', '[data-textarea="message"]', function(event) {
-//       if (event.keyCode == 13) {
-//           $('[data-send="message"]').click();
-//           event.preventDefault();
-//           $('[data-textarea="message"]').val("");
-//    }
-// })
-
-$(document).on('submit', '#submit-text', function(event) {
-  console.log('this ran')
-          event.preventDefault();
-          const curr_concert = window.location.pathname.match(/concerts\/(\d*)/)[1];
-          const url = '/concerts/' + curr_concert + '/shared_experiences';
-          const text = $.trim(('[data-textarea="message"]').val())
-
-          console.log(url);
-
-          // fetch('/vote_reg', {
-          //   method: 'POST',
-          //   credentials: 'include',
-          //   headers: {
-          //     'Content-Type': 'application/json',
-          //     'X-CSRF-TOKEN': this.props.auth_token
-          //   },
-          //   body: JSON.stringify({message: {statement: text}, concert_id: curr_concert})
-          // }).then((response) => {
-          //   if (!response.ok) { throw response }
-          //   return response.json();
-          // }).then((json)=>{this.notice(json)
-          // }).catch( err =>{console.log(err)})
-
-
-        //   fetch(url, {
-        //   method: 'post',
-        //   body: JSON.stringify(opts)
-        // }).then(function(response) {
-        //   return response.json();
-        // }).then(function(data) {
-        //   ChromeSamples.log('Created Gist:', data.html_url);
-        // });
-          $('[data-textarea="message"]').val("");
-          
-
-          
+  jcarouselControlls();
+  scrollBottom();
+  setInterval(addTweets, 60000);
 })
 
 
